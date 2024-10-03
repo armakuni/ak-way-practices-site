@@ -51,13 +51,13 @@ export const query = graphql`
     query {
         allMdx {
             nodes {
+                excerpt
                 fields {
                     slug
                 }
                 frontmatter {
                     title
                     tags
-                    description
                 }
             }
         }
