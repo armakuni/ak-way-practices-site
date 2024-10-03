@@ -1,0 +1,94 @@
+---
+title: "The Continuous Way"
+tags: ["service-development"]
+---
+export {default as default} from './../../../components/post-layout';
+
+
+# The Continuous Way
+
+## Continuous Integration
+
+Continuous Integration (CI) is a software development practice where the developers integrate their work frequently with the main shared code trunk. CI encourages developers to commit and push code and tests after every small task. The frequency should as a minimum be once a day but ideally the developers should be working towards pushing their code multiple times a day. Each code integration to is verified by an automated build which compiles and run tests on the code repository. This approach leads to less integration problems and allows teams to develop functionality much faster. Since code integration is done more frequently, there is less back-tracking required to figure out where things went wrong.
+
+!!! Takeaway
+
+    Integrate at least once daily
+
+The main benefits are,
+
+* Catch bugs early and action them quicker.
+* Less waiting time to figure out if the code is working or not
+* Less time debugging and more time developing functionality
+* Helps to deliver code faster
+* Less tense and quicker integration
+* Increased visibility within the business and wider communication
+
+In order to go about continuous integration, there are few good practices to adhere to. They are,
+
+* Have a single code repository for an application
+* Automate the build so that when a developer pushes code into the remote repository, the build server kicks off.
+* Add tests that also run for every build
+* Maintain fast build times
+* Keep the build run visible for everyone.
+* Add meaningful commit messages.
+* Do not push in broken code
+* Do not push in untested code
+* Wait till the build server has run successfully before leaving work.
+* Fix broken builds immediately.
+
+## Continuous Delivery
+
+Continuous Delivery (CD) is a software development practice where in the code once integrated will be build, test, configured and **can** be deployed to a production environment. CI starts the CD process and builds on top of it. Without continuous delivery, there were a lot of manual intervention to get a piece of functionality into production. It also involved multiple teams and work was passed from one to the next without actually working together. This was a big bottleneck as this can cause miscommunication, mistakes and is very slow. A key test to validate you have achieved continuous delivery is when the business requests you to deploy the current development version of the software, it get's done quickly and without too much planning, time or tension.
+
+To achieve CD, a deployment/release pipeline is required. The pipeline contains multiple testing and it automates the creation of the deployment. Each progressive testing step in the pipeline becomes longer and tests in an environment closer to production. The steps in the pipeline could be *Build*, *Unit Test*, *Package*, *Deploy to test environment*, *Integration Testing*, *Deploy to staging environment*, *User Testing*. A code commit starts off the pipeline and each successful step triggers the subsequent steps in the pipeline.
+
+!!! Takeaway
+
+    Deployment is at the discretion of the business
+
+The main benefits of continuous delivery are,
+
+* Quicker user feedback. Since the software is always ready to be deployed, it can be deployed when the product team requires feedback on the functionality to determine how to proceed further.
+* Less manual intervention to release functionality and hence less errors and smoother deployment.
+* Everyone is confident that a successful pipeline indicated that the build is ready to deployed.
+
+The good practices to follow when performing CD are,
+
+* Priority is to keep software deployable over new features
+* Have a deployment pipeline to automate the process
+* Have multiple testing phases
+* A close working relationship with everyone involved in delivery
+* The decision to deploy into production is with the business and not developers or operations.
+* Test in an environment that is as close to production as possible.
+* Have infrastructure as code.
+
+## Continuous Deployment
+
+Continuous Delivery (CD) is a software development practice where in the code once integrated will be build, test, configured and **will** be deployed to a production environment. Continuous deployment is the natural next step to continuous delivery.
+
+!!! Takeaway
+
+    Done means released to customers
+
+While continuous deployment implies continuous delivery the reverse is not true. Continuous delivery is about putting the release in the hands of the business, not in the hands of developers. Continuous deployment always makes sure that the code changes are directly pushed into production and the release is in the hands of the developers.
+
+The main benefits of continuous deployment on top of the benefits of continuous delivery are,
+
+* Done means released. When a story is *done*, we can be confident that the users can interact or use the functionality.
+* Frequent product releases.
+* Very little human intervention and no manual steps to deploy code into the hands of the customers.
+* Centralised view of deployment activities which aids in auditing.
+
+The good practices to follow when performing continuous deployment are (though some can overlap with continuous delivery),
+
+* Deploying features that are not finished in a *dark* mode (with feature files or configuration to disable the feature till it is completed)
+* There are no manual steps from code check in to the feature being available at the customer's end.
+* Blue/Green deployment.
+* Production testing of features. This is most useful when a feature is enabled to a selective group of users to get better feedback.
+
+## References
+
+[Continuous Integration](https://www.martinfowler.com/articles/continuousIntegration.html)  
+[Continuous Delivery](https://martinfowler.com/bliki/ContinuousDelivery.html)  
+[Continuous Delivery Book](https://www.amazon.co.uk/Continuous-Delivery-Deployment-Automation-Addison-Wesley-ebook/dp/B003YMNVC0)  

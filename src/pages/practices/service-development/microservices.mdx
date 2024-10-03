@@ -1,0 +1,55 @@
+---
+title: "Microservices"
+tags: ["service-development"]
+---
+export {default as default} from './../../../components/post-layout';
+
+# Microservices
+
+
+Microservice architecture is an architecture style that builds an application from small loosely coupled services. The boundary of the service or how small a service should be is determined by the business capabilities.
+
+James Lewis and Martin Fowler says,
+> In short, the microservice architectural style is an approach to developing a single application as a suite of small services, each running in its own process and communicating with lightweight mechanisms, often an HTTP resource API. These services are built around business capabilities and independently deployable by fully automated deployment machinery. There is a bare minimum of centralized management of these services, which may be written in different programming languages and use different data storage technologies.
+
+## Characteristics
+
+Microservices are defined by the following properties,
+
+### Multiple Components
+
+Microservice architecture generally contains multiple components or services. This makes it easier to integrate, test and deploy each component independently. It also makes it easy to replace or upgrade each component without affecting the others.
+
+### Separately deployable
+
+Each component of the microservice architecture should be deployed independently. The advantage of having independent components is that each component can be deployed without affecting the others. Independent deployment has the added benefit of speeding up the deployment process for each component and in case of failures, it only affects a small section of the entire application.
+
+### Focused on business capabilities
+
+The microservice components are usually organised around business capabilities. A business capability is something that the business does that would generate value. It often corresponds to a business object or functionality. This would encourage teams to be cross-functional, autonomous and owing to the entire product instead of one aspect of the component. The teams are organised around delivering business value rather than features.
+
+### Loosely coupled
+
+Each component should be loosely coupled to each other. This will allow the teams to decide the best technology and tools for the component. The microservice architecture favours decentralised data management where each application or component has its own data storage layer.
+
+### Smart endpoints and dumb pipes
+
+Each component should have a simple api to process requests. Simple communication means that the component receives a request, processes them and generates a response. That is the components have smart endpoints that process information and apply business logic and dump pipes through which the response flows.
+
+### Failure resistant
+
+Microservices should be built with failure in mind. Since there are multiple diverse components, there is a possibility that some services could fail and in these instances, the services should fail gracefully so that the neighbouring services function and not fail as well. A way to minimise the risk of failures is to introduce monitoring.
+
+## Benefits
+
+* Strong module boundaries
+* Independent deployment
+* Technical diversity
+* Decoupled microservices
+* Product teams over project teams
+* Individually scalable services
+
+## References
+
+[James Lewis and Martin Fowler](https://martinfowler.com/microservices/)  
+[Microservices](https://microservices.io/)

@@ -1,0 +1,552 @@
+---
+title: "Domain-Driven Design"
+tags: ["methodologies"]
+---
+
+export {default as default} from './../../../components/post-layout';
+
+
+# Domain-Driven Design
+
+```admonish info
+This article is a has incomplete sections. You can help Armakuni by completing it.
+```
+
+```admonish tip
+See the [Glossary](domain-driven-design.md#glossary) for details on
+```
+    unfamiliar terms.
+
+## What is It?
+
+Domain-Driven Design, or DDD, is an approach to developing software. DDD aims
+to break down barriers between the _domain experts_ and the software
+developers. This aims ensure that the right software is built and it solves
+the right problems. Practitioners do this by working closely with the _domain
+experts_ to gain an understanding of the domain, model it, and build a solution
+which directly maps to it.
+
+There are two sides to Domain-Driven Design. The _strategic_ side is about
+understanding and modelling the domain. The _tactical_ side is about specific
+software design patterns which aid the implementation of a resilient model.
+
+### Strategic Tools
+
+Domain-Driven Design generally starts with conversations. The development team
+needs to start to understand the domain and identify the subdomains. The
+strategic tools of DDD help teams grow the understanding of the domain,
+identify the problems which needs to be solved, and then start to model the
+solution.
+
+**Modelling Events:**
+
+    Domain-Driven Design practitioners pay much attention to events that occur
+    in the domain and then model them in the code. This is because talking about
+    things that occur is much more natural to people than talking about the
+    state of the system once things have occurred.
+
+    [Event Storming](http://eventstorming.com/) is a process which has grown out
+    of the DDD community which focusses on learning about domains for this
+    perspective.
+
+#### Subdomains
+
+Subdomains are sub-parts of your business domain; they might be represented by a
+different process, department, office or team in a company. Different
+subdomains may well have different _domain experts_.
+
+In the case of an online shop, you might have subdomain such as:
+
+- The catalogue
+- Sales
+- Packaging
+- Shipping
+- Customer Finance
+- Procurement
+- Finance
+- Advertising
+- Social Media
+- Accounting
+- Returns
+
+There are three categories of subdomain - _core_, _supporting_ and _generic_.
+
+##### Core Domains
+
+Core domains are the reason your business exists. They are your unique selling
+point (USP).
+
+##### Supporting Subdomains
+
+Supporting domains are not the reason your business exists, but you need them.
+
+##### Generic Subdomains
+
+The generic subdomains are the ones that many businesses are doing; accounting
+for example. Generic domains are generally the areas where investing in
+off-the-shelf solutions is the best approach.
+
+#### Bounded Contexts
+
+As you start to design your model you first start to identify the bounded
+contexts. These are semantic contextual boundaries which contain their own
+unique _ubiquitous language_. Bounded contexts often align with subdomains.
+They may also share terms which are present in other contexts, but with a
+unique meaning or perspective.
+
+When writing the code, each bounded context should be modelled in a separate
+directory, package or application/service. More importantly, different bounded
+contexts may be owned and independently developed by separate teams - this is
+probably the key reason that DDD had a resurgence as the popularity of
+microservices grew.
+
+##### Example: Different view of the same thing
+
+An online shop might have sales, packaging and shipping contexts.
+All three of these departments might have the concept of a _customer,_ but each
+one might have a different idea of it. The sales department might only be
+interested in the customer ID so that it can assign it to the order. The
+packaging department might need the address so that they can print the label
+for the package. The shipping department might want the email so that they
+can let the customer know that they have shipped their order. Each bounded
+context has its own model of the customer which is specific to its needs.
+
+##### Example: Same term with different meanings
+
+Using the online shop again, the sales department might refer to the act of
+a customer placing an order as _ordering_. On the other hand, the department
+responsible for restocking the warehouse might use the term _ordering_ to
+describe the order in which they place items on the shelves. In a bounded
+context, it is not possible to overload a term so that it means two different
+things; however, it is perfectly fine to have the same term used for different
+things in different contexts.
+
+#### Ubiquitous Language
+
+The ubiquitous language is a universal language which exists in a given bounded
+context. The software developers, domain experts and the code all use this same
+language. Its aims to ensure that everyone understands the domain and software
+in the same way - avoiding any need to translate business concepts into
+software design patterns or vice versa.
+
+For a given ubiquitous language, each team has exactly one meaning - there is
+no debate as to what it means.
+
+The ubiquitous language should be stuck to in all conversation and should be
+used throughout the code. If the meaning of terms change or better names are
+discovered, then the code and conversation should be updated to include that
+change.
+
+It's vital that the developers adopt this language, rather than translate the
+meaning into technical terms, as this helps to avoid confusion and meaning
+being lost in translation.
+
+> “When X transitions to Y” is probably not part of your domain language.
+>
+> [@tomphp - 5th June 2018](https://twitter.com/tomphp/status/1003958886578171904)
+
+#### Context Maps
+
+A context map is used to define the inter-team relationships between different
+bounded contexts. Context maps define relationships as one of the following:
+
+- _partnership_ - both parties actively maintain the relationship
+- _shared kernel_ - both parties share a common part of the model
+- _customer supplier_ - one party owns the relationship
+- _conformist_ - one party has to conform to the decisions of the other
+- _anticorruption layer_ - one party builds a resiliency layer to protect against
+  the unpredictable behaviour of the other party
+- _open host service_ - one party defines a protocol and allows anyone to consume it
+- _published language_ - where one party publishes the specification of their API
+- _separate ways_ - where both parties decide they simply cannot work together
+
+Again, this is a really useful tool for teams working with microservice
+architectures as it helps define and understand the contracts between teams.
+
+### Tactical Patterns
+
+```admonish caution
+This section is only really relevant to software developers.
+```
+
+DDD practitioners like to encode as much domain behaviour, information and
+invariants into the code as possible. The tactical patterns support this, but
+there are also some approaches to writing code which are common among DDD
+developers.
+
+##### 1. Descriptive Naming
+
+DDD developers like to use the features of the language to describe the domain
+in detail. One typical example of this is to use `static` methods as named
+constructors for classes; this causes the code to express more useful
+information.
+
+Consider:
+
+```java
+Discount discount = new Discount(0.2);
+```
+
+Versus:
+
+```java
+Discount discount = Discount.fromPercentage(20);
+```
+
+###### Further Learning
+
+- [Named Constructors in PHP - Mathias Verraes](http://verraes.net/2014/06/named-constructors-in-php/)
+
+##### 2. Type Everything
+
+DDD developers like to type anything that can be typed. Using primitives misses
+the opportunity to make meaning explicit. In a strongly typed language this
+also reduces the risk of error.
+
+Consider:
+
+```java
+Customer customer = new Customer(101, "John", "Doe", "gold", 1000);
+```
+
+Versus:
+
+```java
+Customer customer = new Customer(
+  CustomerID.fromInteger(101),
+  PersonName.fromFirstAndLast("John", "Doe"),
+  AccountType.GOLD,
+  CreditLimit.fromMoneyInGBP(1000)
+);
+```
+
+##### 3. Unbreakable Models
+
+In addition to using types extensively, DDD developers also like to make good use
+of encapsulation to enforce invariants and ensure that no objects can get into
+an invalid state.
+
+###### Further Learning
+
+- [Type Safety and Money](http://verraes.net/2016/02/type-safety-and-money/)
+- [Unbreakable Domain Models - Mathias Verraes](https://www.youtube.com/watch?v=ZJ63ltuwMaE)
+
+Now onto the specific tactical patterns:
+
+#### Value Objects
+
+Value objects are used to represent values. They do not have an identity, they
+are immutable, and their equality is based on their value.
+
+Some examples of values might be:
+
+- Money - Two different £5 notes are considered of equal value
+- Colours - Red is red
+- A person's name - Two people called Dirk Gently are considered to have the
+  same name (even though they are not the same people).
+
+##### Example
+
+```java
+public final class PersonName {
+
+    // Final fields because value objects are immutable
+    public final String first;
+    public final String last;
+
+    // Named constructors are more explicit
+    public static PersonName fromFirstAndLast(String first, String last) {
+        return new PersonName(first, last);
+    }
+
+    // Named constructors are more explicit
+    public static PersonName fromFullName(String name) {
+        if (StringUtils.isEmpty(name)) {
+            throw new FirstNameMustBePresent();
+        }
+
+        String first = null;
+        String last = null;
+        String parts[] = name.split(" ", 2);
+
+        if (parts.length > 0) {
+            first = parts[0];
+        }
+
+        if (parts.length > 1) {
+            last = parts[1];
+        }
+
+        return new PersonName(first, last);
+    }
+
+    private PersonName(String first, String last) {
+        if (StringUtils.isEmpty(first)) {
+            throw new FirstNameMustBePresent();
+        }
+
+        if (StringUtils.isEmpty(last)) {
+            throw new LastNameMustBePresent();
+        }
+
+        this.first = first;
+        this.last = last;
+    }
+
+    // Equality is determined by the values
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+
+        if (o == null || getClass() != o.getClass()) return false;
+
+        PersonName that = (PersonName) o;
+
+        return new EqualsBuilder()
+                .append(first, that.first)
+                .append(last, that.last)
+                .isEquals();
+    }
+
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder(17, 37)
+                .append(first)
+                .append(last)
+                .toHashCode();
+    }
+}
+
+```
+
+#### Entities
+
+Entities are things which have an identity. Entities may have mutable elements
+- their values might change, but they maintain their identity.
+
+Examples of entities are:
+- A person - A person might change their name or their hair colour, but they are
+  still the same person.
+- An order - An order might have it state updated, or even the items on the
+  order, but it's still the same order.
+
+##### Example
+
+```java
+public final class Customer {
+    // The identity is immutable
+    private final CustomerID id;
+
+    private PersonName name;
+    private EmailAddress emailAddress;
+
+    public static Customer fromName(PersonName name) {
+        return new Customer(CustomerID.generate(), name);
+    }
+
+    private Customer(CustomerID id, PersonName name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public void updateEmailAddress(EmailAddress newAddress) {
+        emailAddress = newAddress;
+    }
+}
+```
+
+#### Aggregates
+
+Aggregates are a combination of one or more entities and value objects. One of
+the entities in the aggregate is called the _aggregate root_. The aggregate root
+is this only entity which will be interacted with outside of the aggregate (it
+provides the public interface for the aggregate). The name of the aggregate root
+is also the name for the whole aggregate.
+
+Aggregates act as a transactional boundary between multiple entities and are
+used to maintain their consistency.
+
+##### The Actor Model
+
+The nature of aggregates (i.e. manages its state based on messages from a
+simple public interface) means they are very suited to the actor model. The
+actor model is very suitable for building reactive systems.
+
+If you want to go down this route then see:
+
+- [Reactive Messaging Patterns with the Actor Model - Vaughn Vernon](https://www.amazon.co.uk/Reactive-Messaging-Patterns-Actor-Model/dp/0133846830)
+- [The Language of Actors](https://www.youtube.com/watch?v=KtRLIzG5c54)
+
+#### Repositories
+
+A repository represents a collection of entities. It provides the interface to
+store and retrieve the entities.
+
+It's to define a repository as an interface, with one or more
+persistence engine specific implementations.
+
+##### Example
+
+```java
+public interface Customers {
+    Customer fetchByID(CustomerID id);
+
+    Customer fetchByEmailAddress(EmailAddress emailAddress);
+
+    List<Customer> fetchActive();
+
+    void store(Customer customer);
+}
+```
+
+#### Domain Events
+
+Events represent something that happened. Domain events are always named with
+a past tense verb (e.g. order placed, order shipped, item returned). Events are
+also immutable - you can't change history.
+
+Domain events are also often used with the publisher/subscriber model - using
+the observer pattern and/or message queues.
+
+##### Example
+
+```java
+public class CustomerEmailAddressUpdated {
+
+    // Final because events are immutable
+    public final CustomerID customerID;
+    public final EmailAddress newEmailAddress;
+
+    public CustomerEmailAddressUpdated(CustomerID customerID, EmailAddress newEmailAddress) {
+        this.customerID = customerID;
+        this.newEmailAddress = newEmailAddress;
+    }
+}
+```
+
+#### Domain Services
+
+```admonish info
+This sections is incomplete. You can help Armakuni by completing it.
+```
+
+
+#### Application Services
+
+```admonish info
+This sections is incomplete. You can help Armakuni by completing it.
+```
+
+
+## DDD and Microservices
+
+With the rise in popularity of microservices, DDD had a huge resurgence. A lot
+of this was down to the fact that modelling bounded context gives excellent
+separation between parts of the software which can then be developed with
+full autonomy. This is why you often hear people say things like _"Start with
+one service per bounded context."_.
+
+The deeper reason that DDD and microservices are such a good fit is that DDD
+emphasises the understanding and respect for the complexities of the business.
+[Microservices aim to solve the problems of larger teams working on complex
+problems](https://cloudnative.ly/designing-microservice-architectures-for-people-fcb4fb92397)
+by breaking them down into smaller, simpler, autonomous pieces; the
+understanding that DDD captures is perfect for designing these systems.
+
+## When to Apply DDD?
+
+Doing DDD is often talked about as being expensive; this is down to the fact
+that thoroughly understanding the workings of a business and domain takes time -
+as does a developing highly resilience code and systems. Therefore, it generally
+provides the most benefit when working with core or essential subdomains. There
+should also be suitable complexity in the domain that you are working in -
+there's no point in trying to do DDD for a simple CRUD application.
+
+With the above said, there are many useful tools which can be taken from DDD
+even if you do not apply all the others in a project. The ubiquitous language
+and using it to write code that expresses real-world ideas is hugely valuable,
+bounded contexts are one of the best tools for organising complex systems, and
+the tactical design patterns are useful regardless of whether you are using the
+strategic tools (use of just tactical patterns has gained the term _DDD Lite_).
+
+## Event Sourcing
+
+Due to the attention that DDD puts on domain events, there's a lot of work
+around Event Sourcing in the community. Event sourcing is a technique where the
+system state is stored in the database as a stream of events rather than a
+snapshot of the current state. When the system loads an entity from persistence,
+it does so by replaying the previous events in order.
+
+Storing events rather than state means that the whole history of the entities
+is available. This is useful for audit trails, debugging, analysis and many
+other reasons.
+
+```admonish caution
+GDPR has recently caused a few challenges to people using event sourcing as
+```
+    stored events are meant to be immutable. With this in mind, it's worth
+    carefully considering what personal details need to be stored in events.
+
+## Glossary
+
+| Term                | Description                                                                     |
+|---------------------|---------------------------------------------------------------------------------|
+| aggregate           | One or more entities are collected together to create a transactional boundary. |
+| aggregate root      | The entity which provides the public interface for the whole aggregate.         |
+| bounded context     | A contextual boundary in the domain which has its own ubiquitous language.      |
+| context map         | A map of the inter-team relationships between bounded contexts.                 |
+| cqrs                | Command Query Responsibility Segregation - an architectural pattern which separates the expensive write operations from the more frequently used read operations. |
+| domain              | The domain of a business contains everything it does. (e.g. a mail order shop). |
+| domain expert       | Someone with intimate knowledge of the business domain.                         |
+| entity              | An object which has an identity.                                                |
+| model               | A model is a useful software representation of a real-world concept which serves a specific purpose. The London Underground map is an example of a simple model of something complex in the real world but serves a specific purpose. |
+| problem space       | In DDD, the real world domain is considered the problem space.                  |
+| subdomain           | A logical sub-part of the overall business domain. (e.g. shipping)              |
+| solution space      | In DDD, the software model is considered the solution space.                    |
+| ubiquitous language | A language shared between developers and domain experts where each term has precisely **one** meaning. |
+| value object        | An immutable object which represents a value.                                   |
+
+## Further Learning
+
+### Books
+
+- [Domain-Driven Design Distilled - Vaughn Vernon](https://www.amazon.co.uk/Domain-Driven-Design-Distilled-Vaughn-Vernon/dp/0134434420) (aka The Green Book)
+
+- [Domain-Driven Design: Tackling Complexity in the Heart of Software - Eric Evans](https://www.amazon.co.uk/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/ref=pd_lpo_sbs_14_t_1?_encoding=UTF8&psc=1&refRID=JNP3JZ3WQQ7HNAHNHDEW) (aka The Blue Book)
+
+- [Implementing Domain-Driven Design - Vaughn Vernon](https://www.amazon.co.uk/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577/ref=pd_lpo_sbs_14_t_0?_encoding=UTF8&psc=1&refRID=JNP3JZ3WQQ7HNAHNHDEW) (aka The Red Book)
+
+- [Domain-Driven Design in PHP - Carlos Buenosvinos, Christian Soronellas, and Keyvan Akbary](https://leanpub.com/ddd-in-php)
+
+- [The Strategic Practices of Domain-Driven Design - Nick Tune](https://www.amazon.co.uk/Patterns-Principles-Practices-Domain-Driven-Design/dp/1118714709)
+
+- [Domain Modelling Made Functional - Scott Wlaschin](https://pragprog.com/book/swdddf/domain-modeling-made-functional) (if you're interested in functional programming)
+
+
+### Online Courses
+
+- [Online Course - Eric Evans - Video](https://elearn.domainlanguage.com/)
+
+### Training
+
+- [IDDD Workshop Courses - Vaughn Vernon](https://idddworkshop.com/)
+
+- [DDDEU Training - Multiple Courses](https://training.dddeurope.com/)
+
+- [Avanscoperta - Multiple Courses](https://www.avanscoperta.it/en/tag/ddd-en/)
+
+### Meetups
+
+- [Domain-Driven Design London](https://www.meetup.com/dddlondon/)
+
+### Conferences
+
+- [DDD Europe](https://dddeurope.com/)
+- [DDD eXchange](https://www.infoq.com/ddd-exchange/)
+
+### Videos
+
+- [DDDEU Videos](https://www.youtube.com/channel/UC3PGn-hQdbtRiqxZK9XBGqQ/videos)
+
+- [Reactive DDD: Modelling Uncertainty - Vaughn Vernon](https://www.youtube.com/watch?v=MKLRXCiU5IE)

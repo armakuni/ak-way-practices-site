@@ -1,0 +1,154 @@
+---
+title: "Inception"
+tags: ["lean-agile"]
+---
+export {default as default} from './../../../components/post-layout';
+
+# Inception
+
+An inception meeting is used to set the goals for a time-boxed piece of work. We
+typically choose periods of around **three months** (which aligns with eXtreme
+Programming's Quarterly Cycles), however, this can be adjusted based on the
+circumstances.
+
+## Running an Inception Meeting
+
+To run an inception, you need to make sure you have the following:
+
+- **The right people**: It's important to have the right people in the room for
+  an inception; missing key people can result in the wrong or unobtainable goals
+  being defined.
+- **Enough time**: Typically an inception meeting takes about **one day** but a
+  large story mapping session can easily take it into a second day.
+- **Space**: For an inception, you want a room where you won't be disturbed and 
+  has suitable wall space and/or whiteboards.
+- **Resources**:
+    - Sharpies
+    - Plenty of Post It notes
+    - Refreshments and snacks
+
+### 1. Goals and Non-goals
+
+For the first activity, we start defining the **goals** and **non-goals**
+(also known as *anti-goals*).
+
+This is done collaboratively and can be done using Post It notes, index cards,
+a whiteboard, or in a digital document. Whatever medium you choose, it should
+be one where you're free to move items around.
+
+#### Goals
+
+Goals are things that we want to achieve by the end of the time we are holding
+an inception for. For a goal to be in the list it should be achievable and
+measurable (i.e. we have to be able to know when we have completed it).
+
+Examples of good goals might be:
+
+- Fully automated deployments
+- Add the product review feature
+- Get 1000 new users
+
+Examples of bad goals might be:
+
+- Improve the quality of the code *(how do we know we have done it?)*
+- Fly to Pluto *(unobtainable feature)*
+
+#### Non-goals (or anti-goals)
+
+Non-goals are things that we don't want to work on in this iteration. They may
+be things that we want to do in the future but we are explicitly identify them
+as things that we don't want to do right now.
+
+The idea with non-goals is to remove the focus from things which might distract
+us in delivering the goals. It is important to try and capture all possible
+non-goals.
+
+### 2. Risks
+
+Now we have a set of goals, we want to identify the risks which might jeopardize
+the team's ability to complete the goals.
+
+We often do this silently, each writing down our own risks on PostIt notes. Once
+everyone has finished, we
+
+1. present them
+2. group them
+3. dot vote them (place a dot
+on the groups you feel are the biggest risk - *limited to three dots each*)
+4. discuss them
+
+The goal of the discussion is to try and find ways to mitigate each risk.
+Mitigations might include things like:
+
+- Having a meeting
+- Spiking an unknown early on
+- Adding a non-goal (or moving a goal to a non-goal)
+
+### 3. Actors
+
+Next we start looking at all the people involved in delivering the goals. The
+aim here is to identify who is required to achieve the goals and make sure that
+the team have appropriate access to these people.
+
+### 4. Story Mapping
+
+Once we believe we have reachable goals, we then start to build a backlog of 
+work. The primary technique for this is User Story Mapping. User Story Mapping
+is a big topic in its own right, therefore, you can find a whole page dedicated
+to it [here](./user-story-mapping.md).
+
+### 5. Estimation
+
+Finally, the stories are estimated. We usually do this using *story points*
+on a *Fibonnaci scale*. That is to say, we estimate the work of a story
+relative to the estimated work of other stories. The simplest stories are
+estimated as 1 point, with other stories being estimated as 2x, 3x, 5x or 8x the
+effort.
+
+Estimates are often done with a round of
+[Planning Poker](https://www.mountaingoatsoftware.com/agile/planning-poker).
+
+## Facilitation Tips
+
+### Take regular breaks
+
+Inception meetings are long and intense so you need to make sure that you take
+enough breaks to not tire people out.
+
+### Ensure people are engaged
+
+Inceptions require the attention of the people present, ideally you want to
+ensure people are focussed on the task rather than looking at phones or laptops.
+
+### Refreshments
+
+Make sure there's some refreshments in the room to keep everyone's energy levels
+up.
+
+## Next Steps
+
+### 1. Migrate all the stories into Pivotal Tracker
+
+Pivotal Tracker is our project tracking tool of choice (obviously, if the client
+is using something else then use that instead). Once the inception is over, all 
+the stories and estimations should be transferred to the tracker.
+
+You can find more details on how we use Pivotal Tracker [here](https://theway.armakuni.co.uk/technology-tools/pivotal-tracker/).
+
+### 2. Delivering goals, rejecting non-goals
+
+Start work on the project, working in small iterations (typically 1 week).
+
+Use the goals and non-goals as a reference when doing iteration planning and 
+retrospectives to ensure that the team is still on target.
+
+If the work starts to deviate from the goals, or new goals start being defined,
+then this should be raised and a decision on how to continue the engagement
+should be discussed.
+
+## References
+
+- [Inception: Knowing what to build and where you should start](https://tanzu.vmware.com/content/blog/inception-knowing-what-to-build-and-where-you-should-start)
+- [Extreme Programming Practice: Quarterly Cycle](https://explainagile.com/agile/xp-extreme-programming/practices/quarterly-cycle/)
+- [Pivotal Tracker](https://theway.armakuni.co.uk/technology-tools/pivotal-tracker/)
+- [Planning Poker](https://www.mountaingoatsoftware.com/agile/planning-poker)

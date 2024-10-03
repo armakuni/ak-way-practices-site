@@ -1,0 +1,61 @@
+---
+title: "Serverless"
+tags: ["service-development"]
+---
+export {default as default} from './../../../components/post-layout';
+
+# Serverless
+
+This article covers the reasons why you might want to use Serverless.
+
+```admonish tip
+Looking for a practical guide? Try the [Serverless - Quick Start](https://serverless.com/framework/docs/providers/aws/guide/quick-start/)
+```
+
+## What is Serverless?
+
+Serverless is anything which uses per utilisation billing, which typically includes:
+
+* Bandwidth Used
+* Storage Used
+* Requests Received
+
+It is also closely related to products which offer Functions as a Service (FaaS), such as [Amazon Lambda](https://aws.amazon.com/lambda/) and [Google Cloud Functions](https://cloud.google.com/functions/) as they, and the services supporting them, are typically billed this way.
+
+Functions as a Service are small bits of code that are executed based on various events, such as a user making a web request, or a message arriving in a queue. They came to exist as they allow the by request billing, which isn't as possible with traditional Virtual Machines (VMs).
+
+There is also a framework called [Serverless](https://serverless.com/), which aims to simplify and unify the deployment of applications developed using FaaS.
+
+## Why use Serverless
+
+Serverless is still an immature technology, meaning there are some gains as well as pains when trying to use it.
+
+### Gains
+
+There are a few main benefits of using Serverless Technologies
+
+* You pay per request, meaning no wasted capacity
+* No more server or network maintenance, freeing up time to be spent on value-producing work
+* Scaling up and down is managed by your hosting provider
+
+### Pains
+
+Having said this, Serverless does have some downsides
+
+* Each vendor has a different implementation, meaning you could become locked in
+* May require a significant change to your codebase. You might need to spend a lot to change your application to run on a Serverless architecture
+* Harder to secure, as everything is running on someone else's system and how to protect your data and network is relatively undeveloped.
+* You can't deploy your own and still get the benefits, meaning you have to use a hosted solution
+* Due to the pricing models used request, or memory heavy applications can become expensive fast
+
+## Further Reading
+
+* [When (and why) not to go serverless - Serverless](https://serverless.com/blog/when-why-not-use-serverless/)
+* [Google Cloud Functions](https://cloud.google.com/functions/)
+* [Google App Engine](https://cloud.google.com/appengine/)
+* [Amazon Lambda](https://aws.amazon.com/lambda/)
+* [Serverless - The Serverless Application Framework](https://serverless.com/)
+* [Knative](https://cloud.google.com/knative/)
+* [Riff](https://projectriff.io/)
+* [Migrating to serverless — a story of lessons learned - CloudNative.ly](https://cloudnative.ly/migrating-to-serverless-a-story-of-lessons-learned-99a26ce6b119)
+* [Fn Project](https://fnproject.io/)

@@ -1,0 +1,93 @@
+---
+title: "Armakuni Development"
+tags: ["service-development"]
+---
+export {default as default} from './../../../components/post-layout';
+
+# Armakuni Development
+
+We aim to be [full-stack engineers]. We want to deliver services, not code
+services running well in production and if it's not working well,
+we should have the skills to change any part of the stack to improve it without impediment.
+
+## Components
+
+These are the key elements to how we deliver software:
+
+1.  Everything as code in version control
+2.  Test Driven Development
+3.  Emergent Design & Microservice Architectures
+4.  Continuous Delivery
+
+### Everything as code in version control
+
+All code should be in source control and nothing should be manually configured. This MUST include workstation configuration, CI pipelines, services, DNS, testing accounts, monitoring etc
+
+### Test Driven Development
+
+Everything we do is tested automatically. They key levels of tests are:
+
+1.  **Unit** - individual methods (No running apps/services/dependencies)
+2.  **Integration** - multiple classes
+3.  **Acceptance** - running app with services/dependencies
+4.  **Systests** - multiple microservices
+5.  **Security**
+6.  **Performance**
+
+**Speed is critical** - Following a **testing pyramid** pattern is important i.e. The majority of tests are unit test, which run quickly, and the fewest tests are systest, which are slow
+
+### Emergent Design & Micro-service Architectures
+
+We do just enough design and, importantly, allow the design to emerge as we get feedback from the development process and the end users.
+
+**Design is critical** - We are not removing the design process, so when appropriate, evolving the design process is important with clear communication to the wider team of changes.
+
+### Continuous Delivery
+
+Every commit is to master and every commit is a potential release candidate. The CI solution is central to everything we do and is the single source of truth.
+
+We use Concourse CI because it gives us the following:
+
+1.  **No snowflakes** - all configuration is code and there is NO opportunity to tweak pipelines via a UI, changes that are not tracked or reproducible
+2.  **No build pollution** - all tasks run in a container and long-lived environments simple can't exist
+3.  **Pipelines** as a first class citizen - commits should always flow towards the user [in production]
+4.  **In app configuration** - CI configuration is revisioned with the application, and this is key to allow developers to directly affect how test are run
+5.  **Scalability** - the CI environment is easy to scale and can be reproduced by running a script
+6.  **Simplicity** - Simple UI to give clear and quick feedback to developers
+
+### Continuous Delivery
+
+Every application must be easy to deploy within a few minutes; Deployments should be zero-downtime and, ideally, should be delivered all the way to production. To enable this, we use Cloud Foundry as a PaaS.
+
+**Developer empowerment is key** - The combination of PaaS, Continuously Delivery and API-driven monitoring allows developers to deliver and **own** their software running in production.
+
+## Build Radiators
+
+We use information radiators to communicate the status of the build pipeline.
+
+The build status should be visible to the team, so broken builds are identified in realtime.
+
+Build radiators show a visual representation of the whole pipeline, so the broken step can be determined.
+
+## Fixing the Build
+
+A broken build should be addressed immediately, and other work is stopped until the build is green again.
+
+Keeping the build in a stable state means we can release every day, should we choose to do so.
+
+It is the team's responsibility to fix the build, although this doesn't mean everyone needs to stop what they are doing - a few developers can focus on this task, while others continue with their work.
+
+## Why We Pair
+
+1.  A large proportion of developer time is spent stuck on problems. Pairing reduces this time.
+2.  Communication and collaboration on design happen **before** coding
+3.  Learning tools and techniques from pair and sharing knowledge
+4.  Maintains focus - pairs keep each other directed at the problem, minimizing disruption
+5.  Modern frameworks take care of boilerplate code, so development work is increasingly focussed on the hard problems
+6.  Increases 'bus factor', reducing risk of a single person having knowledge of an aspect of the system
+7.  Faster on boarding of new team members
+
+### Further Reading
+
+[Pair Programming Considered Extremely Beneficial - Pivotal](https://tanzu.vmware.com/content/blog/pair-programming-considered-extremely-beneficial)
+[full-stack engineers]: ../glossary.md#full-stack-engineer

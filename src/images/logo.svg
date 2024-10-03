@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="svg2" version="1.1" viewBox="0 0 113.6 79.080002" xml:space="preserve">
+  <g id="g10" transform="matrix(1.3333333,0,0,-1.3333333,0,79.08)">
+    <g id="g12" transform="scale(0.1)">
+      <path id="path14" style="fill:#81cc28;fill-opacity:1;fill-rule:nonzero;stroke:none" d="M 366.59,593.152 H 190.523 L 0,-0.00390625 H 195.957 L 293.941,296.574 392.324,593.152"/>
+      <path id="path16" style="fill:#56bae8;fill-opacity:1;fill-rule:nonzero;stroke:none" d="M 206.191,593.152 H 392.324 L 582.848,-0.00390625 H 386.887 L 190.523,593.152 h 15.668"/>
+      <path id="path18" style="fill:#de54b2;fill-opacity:1;fill-rule:nonzero;stroke:none" d="M 651.344,592.852 H 850.113 L 838.922,558.641 751.52,303.016 651.344,592.852"/>
+      <path id="path20" style="fill:#f78f22;fill-opacity:1;fill-rule:nonzero;stroke:none" d="M 557.105,303.016 656.059,-0.00390625 H 852.02 L 751.52,303.016 H 557.105"/>
+      <path id="path22" style="fill:#eb2629;fill-opacity:1;fill-rule:nonzero;stroke:none" d="M 651.344,592.852 751.52,303.016 H 557.105 Z"/>
+      <path id="path24" style="fill:#4798d9;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 190.523,593.152 100.801,-304.492 101,304.492 z"/>
+    </g>
+  </g>
+</svg>

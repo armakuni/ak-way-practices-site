@@ -1,0 +1,6 @@
+schema: .cache/typegen/schema.graphql
+documents: '.cache/typegen/*.graphql'
+extensions:
+  endpoints:
+    development:
+      url: http://localhost:8000/___graphql
