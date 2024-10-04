@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@fontsource/maven-pro": "^5.0.16",
+    "@heroicons/react": "^2.1.5",
     "@mdx-js/react": "^3.0.1",
     "@sindresorhus/slugify": "^2.2.1",
     "gatsby": "^5.13.7",

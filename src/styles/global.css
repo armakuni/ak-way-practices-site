@@ -2,7 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  min-height: 1vh;
-  min-width: 100%;
+body,
+#gatsby-focus-wrapper,
+#___gatsby {
+  min-height: 100vh;
+  min-width: 100vw;
 }

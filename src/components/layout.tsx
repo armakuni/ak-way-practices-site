@@ -6,7 +6,7 @@ export default function Layout({ children }: PropsWithChildren) {
   return (
     <>
       <NavBar />
-      <main className={"w-full flex-grow flex"}>{children}</main>
+      <main className={"w-full flex-grow flex min-h-[70vh]"}>{children}</main>
       <Footer />
     </>
   );

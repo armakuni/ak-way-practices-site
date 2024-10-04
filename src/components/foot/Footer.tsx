@@ -2,8 +2,7 @@ import React, { FC } from "react";
 
 const Footer: FC = () => (
   <>
-    <div className={"grow-0"}></div>
-    <footer className="text-base-200-content footer footer-center rounded bg-base-200 p-10">
+    <footer className="text-base-200-content footer footer-center rounded bg-base-200 p-10 mt-auto">
       <div className="grid grid-flow-col gap-4">
         <a className="link-hover link" href="/about">
           About Insights
