@@ -70,7 +70,7 @@ const IndexPage: React.FC<PageProps<DataProps>> = ({ data }) => {
                     {item.frontmatter.icon === "users" ? (
                       <UsersIcon
                         className={
-                          "absolute -top-5 -right-5 h-full stroke-white/10 -z-10"
+                          "absolute -right-7 -top-7 h-full stroke-white/10 -z-10"
                         }
                       />
                     ) : null}
