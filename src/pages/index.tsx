@@ -3,7 +3,8 @@ import type { HeadFC, PageProps } from "gatsby";
 import { graphql } from "gatsby";
 import "@fontsource/maven-pro";
 import Layout from "../components/layout";
-import { UserIcon } from "@heroicons/react/16/solid";
+import { UserIcon } from "@heroicons/react/24/outline";
+import { UsersIcon } from "@heroicons/react/24/outline";
 
 type DataProps = {
   allMdx: {
@@ -48,6 +49,11 @@ const IndexPage: React.FC<PageProps<DataProps>> = ({ data }) => {
               bgColorClass = "bg-info";
             }
 
+            if (item.frontmatter.color === "green") {
+              textColorClass = "text-base-content";
+              bgColorClass = "bg-success";
+            }
+
             return (
               <div className="flex flex-col bg-base-100 m-0 w-full shadow-2xl rounded-3xl">
                 <a href={item?.fields?.slug ?? ""}>
@@ -57,7 +63,14 @@ const IndexPage: React.FC<PageProps<DataProps>> = ({ data }) => {
                     {item.frontmatter.icon === "user" ? (
                       <UserIcon
                         className={
-                          "absolute top-0 right-0 h-full fill-white/10 -z-10"
+                          "absolute top-0 right-0 h-full stroke-white/10 -z-10"
+                        }
+                      />
+                    ) : null}
+                    {item.frontmatter.icon === "users" ? (
+                      <UsersIcon
+                        className={
+                          "absolute top-0 right-0 h-full stroke-white/10 -z-10"
                         }
                       />
                     ) : null}
