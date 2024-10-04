@@ -1,5 +1,5 @@
 schema: .cache/typegen/schema.graphql
-documents: '.cache/typegen/*.graphql'
+documents: ".cache/typegen/*.graphql"
 extensions:
   endpoints:
     development:

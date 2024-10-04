@@ -3,10 +3,11 @@ date: "2022-11-24"
 title: "Metrics"
 tags: [working-with-clients]
 ---
-export {default as default} from './../../../components/post-layout';
 
+export { default as default } from "./../../../components/post-layout";
 
 # Metrics
+
 Metrics are simply measurements, really.
 
 ## 5 key points
@@ -22,65 +23,68 @@ Metrics are simply measurements, really.
 To measure, over time, performance of something (a team, process, or anything relevant), so that the impact of a change (positive or negative) can be shown. Ultimately, demonstrating the success or failure of an initiative.
 
 What is Success or Failure?
+
 - achieving or not achieving a goal.
 
 ### Secondary Purposes
 
- - Provide information and data to prove our value
- - Cultural Change
-    - being open about your data and performance
-    - making what you do more visible and accessible to others
-        - facilitate prompting inter-group questions like "how are you doing that?" or "have you thought of doing..."
- - provide feedback to teams to show:
-    - what is considered important
-    - progress is occurring
-    - appreciation of the scope of what's valuable
+- Provide information and data to prove our value
+- Cultural Change
+  - being open about your data and performance
+  - making what you do more visible and accessible to others
+    - facilitate prompting inter-group questions like "how are you doing that?" or "have you thought of doing..."
+- provide feedback to teams to show:
+  - what is considered important
+  - progress is occurring
+  - appreciation of the scope of what's valuable
 
 ## Deriving Metrics
+
 1. Determine Goals
 2. Identify metrics that may demonstrate progress towards these goals
-3. For each metric, is the metric:  
-    - *measurable?* - can we access the measurements data (easily)
-    - *useful?* - does a change in in the value of the metric convey useful information
-    - *achievable?* - is this measurement expected to change in the timeframe of the initiative
-    - *reliable?* - and stable - the measurements are not volatile nor severely impacted by external events.
-4. Define how the metric will be captured/calculated and trend displayed  
-    - ideally automated capture from an existing system source
-    - calculations, if necessary (e.g. convert mean time between transactions to transactions per hour)
-    - storage of the metrics - should be a common storage mechanism for all metrics data
-    - display/representation of the metrics - time graph, instantaneous change since last or other
-         - again a common, accessible and visible mechanism/platform should be used
+3. For each metric, is the metric:
+   - _measurable?_ - can we access the measurements data (easily)
+   - _useful?_ - does a change in in the value of the metric convey useful information
+   - _achievable?_ - is this measurement expected to change in the timeframe of the initiative
+   - _reliable?_ - and stable - the measurements are not volatile nor severely impacted by external events.
+4. Define how the metric will be captured/calculated and trend displayed
+   - ideally automated capture from an existing system source
+   - calculations, if necessary (e.g. convert mean time between transactions to transactions per hour)
+   - storage of the metrics - should be a common storage mechanism for all metrics data
+   - display/representation of the metrics - time graph, instantaneous change since last or other
+     - again a common, accessible and visible mechanism/platform should be used
 
 For some assistance/starting points, check out:
+
 - [DORA Metrics Framework](https://drive.google.com/open?id=1U1YO4udotdnoGXiLRLLZY3F2IZ2weau8JUGKRMEGGPc)
-   
+
 There are a number of considerations when choosing a metric that you should be aware of:
 
 - they should focus on value creation, not process efficiency
-    - e.g. measuring bug counts - less bugs might seem valuable, but could increase focus on fixing easier and (probably) less valuable bugs
-    - always, a metric should map to at least one goal, and add value to the organisation under that goal's objectives
-- they should __not__ be target-orientated
-    - the trend, movement, or relative change in value over time is what is important, not the absolute value
-    - i.e. it is the journey that's important, not the destination
-    - our goal is always continuous, ongoing improvement - Kaizen 改善
+  - e.g. measuring bug counts - less bugs might seem valuable, but could increase focus on fixing easier and (probably) less valuable bugs
+  - always, a metric should map to at least one goal, and add value to the organisation under that goal's objectives
+- they should **not** be target-orientated
+  - the trend, movement, or relative change in value over time is what is important, not the absolute value
+  - i.e. it is the journey that's important, not the destination
+  - our goal is always continuous, ongoing improvement - Kaizen 改善
 - it is OK, even good, for metrics to (or appear to) conflict or contradict
-    - e.g. measurement of downtime/outages and measurement of release frequency - force conversation about how to achieve both
+  - e.g. measurement of downtime/outages and measurement of release frequency - force conversation about how to achieve both
 - attempt to cover the breadth of goals' objectives
-    - some areas may be easy to gather metrics from, others harder
-    - want to avoid skewed focus on just those things easily measured
+  - some areas may be easy to gather metrics from, others harder
+  - want to avoid skewed focus on just those things easily measured
 - avoid too many metrics
-    - takes time (cost) to develop, validate and maintain each metric
-    - information overload!
-    - ideally rule of 5-7 items works for display
-        - though perhaps more raw metrics data is captured
-        - some binary good/bad, green/blue/red, 👍/👎 aggregations can be helpful
+  - takes time (cost) to develop, validate and maintain each metric
+  - information overload!
+  - ideally rule of 5-7 items works for display
+    - though perhaps more raw metrics data is captured
+    - some binary good/bad, green/blue/red, 👍/👎 aggregations can be helpful
 - good metrics are hard/tricky
-    - easy ones tend to be micro, process-focused (lines of code committed per week), or very distant in time or impact (e.g. organisation revenue)
+  - easy ones tend to be micro, process-focused (lines of code committed per week), or very distant in time or impact (e.g. organisation revenue)
 - document the purpose of the metric, any assumptions, concerns or caveats, means and frequency of capture
-    - and publish these with the metric so that people can appreciate any nuances
-
+  - and publish these with the metric so that people can appreciate any nuances
 
 ## Progression and Evolution
+
 As an engagement progresses, and in the spirit of Kaizen, the original metrics will be found to be lacking. Periodically, altering the metrics in use, or adding new metrics, will be necessary.
 
 The common reasons for changing/adding/removing metrics include:
@@ -90,31 +94,31 @@ The common reasons for changing/adding/removing metrics include:
 - discovery of gaps in measurement of value being added
 
 ### Considerations before changing metrics
+
 However, metrics are not easily changed, reasons include:
 
 - a change to the metric definition invalidates metric data already collected
-    - if possible get the metric data back in time to the baseline for the project
+  - if possible get the metric data back in time to the baseline for the project
 - new metrics might not have historical data available
-    - no meaningful baseline to base trends from (at least in the short-term)
-    - however, if it is a better metric, or covers a gap, it makes sense to do
+  - no meaningful baseline to base trends from (at least in the short-term)
+  - however, if it is a better metric, or covers a gap, it makes sense to do
 - change is disruptive
-    - metrics can become 'holy', and changing a sacred artifact...
+  - metrics can become 'holy', and changing a sacred artifact...
 - there is a cost to change code/storage/display and communicate the changes
-    - but if the metric provides more value...
-
+  - but if the metric provides more value...
 
 ## Human Factors
+
 Introducing metrics, or capturing/publishing them can cause angst in a client organisation. Common fears of people include:
 
 - fear that the metric(s) will be used to measure individual/team performance (and potential impact on jobs/reviews)
-    - when introducing metrics, a discussion forum should be used to explain the purpose of each metric and the awareness of the assumptions, constraints and concerns with each
-    - if necessary, a disclaimer that the value of the metrics will not be used in these contexts
+  - when introducing metrics, a discussion forum should be used to explain the purpose of each metric and the awareness of the assumptions, constraints and concerns with each
+  - if necessary, a disclaimer that the value of the metrics will not be used in these contexts
 - fear that the metrics will show-up badly-performing organisations
-    - often a manager fear, when they feel that the organisation that they run is not performing well 
+  - often a manager fear, when they feel that the organisation that they run is not performing well
 - concern that the metrics don't properly capture the important things
-    - generally that they miss-out on something that is considered important
-    - quite often the thing that is felt to be important is process-related rather than value-related
-
+  - generally that they miss-out on something that is considered important
+  - quite often the thing that is felt to be important is process-related rather than value-related
 
 ## References/Further Reading
 

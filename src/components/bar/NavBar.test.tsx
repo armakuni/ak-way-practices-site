@@ -4,9 +4,8 @@ import { render, screen } from "@testing-library/react";
 import React from "react";
 
 describe("NavBar", () => {
-
   it("Should be visible", () => {
-    render(<NavBar/>);
+    render(<NavBar />);
 
     expect(screen.getByRole("navigation")).toBeInTheDocument();
   });

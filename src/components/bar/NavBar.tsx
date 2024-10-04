@@ -7,7 +7,7 @@ export const NavBar = () => {
       <div className="navbar-start">
         <div className="flex-1">
           <a className="btn-ghost btn text-xl normal-case" href="/">
-            <ArmakuniLogomark className="h-18 w-12"/>
+            <ArmakuniLogomark className="h-18 w-12" />
             <span className={"hidden md:inline"}>&nbsp;The AK Way</span>
           </a>
         </div>

@@ -2,7 +2,8 @@
 title: "Logging"
 tags: ["service-development", "logging"]
 ---
-export {default as default} from './../../../../components/post-layout';
+
+export { default as default } from "./../../../../components/post-layout";
 
 # Logging
 
@@ -30,15 +31,13 @@ Logging is usually done as an afterthought. I have noticed the most often an app
 
 The way logging is done in the cloud-native way requires a shift in the mind-set and approach. Logs should be treated as time-ordered **streams of events**. And the application should not be concerned about how logs are stored or routed. This concept is quite different from the traditional way. Earlier, developers were concerned and spend a lot of time controlling the storage, destination and configuration of logging. A configuration file (or config related code) was used to set up the location of the log files, the rolling of the log, the size of each log file, the naming of the log file etc.
 
-
->    Treat logs as streams of events. This concept is not new, but is required to succeed.
+> Treat logs as streams of events. This concept is not new, but is required to succeed.
 
 In the cloud-native approach, the application should not have have knowledge of the system it is running on, so cannot make file related configurations. A cloud-native application thus writes all its log entries to the standard out or the standard error. The application should not be concerned with the management of the logging but rather on what and when to log along with the other business rules. This does not mean that the developers should ignore taking care of logging but rather the concern of logging is moved away from the application to a separate service/provider that can process, aggregate, analyse and store logs. This can be the cloud provider itself or service that be used within the cloud provider's platform.
 
 This decoupling of the logging management from the application can be a huge advantage. The code becomes simpler and lighter as it does not have the responsibility of log management. Besides, if there is a need to change the log service, it can be done much easier without touching the application. The processing, analysing and storage of logs can rely on industry-standard tools which generally can do a better job.
 
-
->   Decouple the application from the log management
+> Decouple the application from the log management
 
 Another important point in the cloud-native approach is the scaling up and down of applications depending on the needs. If the logs were stored in a traditional fashion in files, it will be very difficult to read logs from each of the multitude of servers. And once the application is scaled down, the logs might be lost forever as access to particular servers is not available anymore. When you have a fixed number of instances on a fixed number of servers, storing logs on disk seems to make sense. However, when your application can dynamically go from 1 running instance to 1000, and you have no idea where those instances are running, you need your cloud provider to deal with aggregating those logs on your behalf.
 

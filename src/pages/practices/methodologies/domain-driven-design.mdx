@@ -3,8 +3,7 @@ title: "Domain-Driven Design"
 tags: ["methodologies"]
 ---
 
-export {default as default} from './../../../components/post-layout';
-
+export { default as default } from "./../../../components/post-layout";
 
 # Domain-Driven Design
 
@@ -15,6 +14,7 @@ This article is a has incomplete sections. You can help Armakuni by completing i
 ```admonish tip
 See the [Glossary](domain-driven-design.md#glossary) for details on
 ```
+
     unfamiliar terms.
 
 ## What is It?
@@ -323,9 +323,11 @@ public final class PersonName {
 #### Entities
 
 Entities are things which have an identity. Entities may have mutable elements
+
 - their values might change, but they maintain their identity.
 
 Examples of entities are:
+
 - A person - A person might change their name or their hair colour, but they are
   still the same person.
 - An order - An order might have it state updated, or even the items on the
@@ -431,13 +433,11 @@ public class CustomerEmailAddressUpdated {
 This sections is incomplete. You can help Armakuni by completing it.
 ```
 
-
 #### Application Services
 
 ```admonish info
 This sections is incomplete. You can help Armakuni by completing it.
 ```
-
 
 ## DDD and Microservices
 
@@ -485,27 +485,28 @@ other reasons.
 ```admonish caution
 GDPR has recently caused a few challenges to people using event sourcing as
 ```
+
     stored events are meant to be immutable. With this in mind, it's worth
     carefully considering what personal details need to be stored in events.
 
 ## Glossary
 
-| Term                | Description                                                                     |
-|---------------------|---------------------------------------------------------------------------------|
-| aggregate           | One or more entities are collected together to create a transactional boundary. |
-| aggregate root      | The entity which provides the public interface for the whole aggregate.         |
-| bounded context     | A contextual boundary in the domain which has its own ubiquitous language.      |
-| context map         | A map of the inter-team relationships between bounded contexts.                 |
-| cqrs                | Command Query Responsibility Segregation - an architectural pattern which separates the expensive write operations from the more frequently used read operations. |
-| domain              | The domain of a business contains everything it does. (e.g. a mail order shop). |
-| domain expert       | Someone with intimate knowledge of the business domain.                         |
-| entity              | An object which has an identity.                                                |
+| Term                | Description                                                                                                                                                                                                                           |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| aggregate           | One or more entities are collected together to create a transactional boundary.                                                                                                                                                       |
+| aggregate root      | The entity which provides the public interface for the whole aggregate.                                                                                                                                                               |
+| bounded context     | A contextual boundary in the domain which has its own ubiquitous language.                                                                                                                                                            |
+| context map         | A map of the inter-team relationships between bounded contexts.                                                                                                                                                                       |
+| cqrs                | Command Query Responsibility Segregation - an architectural pattern which separates the expensive write operations from the more frequently used read operations.                                                                     |
+| domain              | The domain of a business contains everything it does. (e.g. a mail order shop).                                                                                                                                                       |
+| domain expert       | Someone with intimate knowledge of the business domain.                                                                                                                                                                               |
+| entity              | An object which has an identity.                                                                                                                                                                                                      |
 | model               | A model is a useful software representation of a real-world concept which serves a specific purpose. The London Underground map is an example of a simple model of something complex in the real world but serves a specific purpose. |
-| problem space       | In DDD, the real world domain is considered the problem space.                  |
-| subdomain           | A logical sub-part of the overall business domain. (e.g. shipping)              |
-| solution space      | In DDD, the software model is considered the solution space.                    |
-| ubiquitous language | A language shared between developers and domain experts where each term has precisely **one** meaning. |
-| value object        | An immutable object which represents a value.                                   |
+| problem space       | In DDD, the real world domain is considered the problem space.                                                                                                                                                                        |
+| subdomain           | A logical sub-part of the overall business domain. (e.g. shipping)                                                                                                                                                                    |
+| solution space      | In DDD, the software model is considered the solution space.                                                                                                                                                                          |
+| ubiquitous language | A language shared between developers and domain experts where each term has precisely **one** meaning.                                                                                                                                |
+| value object        | An immutable object which represents a value.                                                                                                                                                                                         |
 
 ## Further Learning
 
@@ -522,7 +523,6 @@ GDPR has recently caused a few challenges to people using event sourcing as
 - [The Strategic Practices of Domain-Driven Design - Nick Tune](https://www.amazon.co.uk/Patterns-Principles-Practices-Domain-Driven-Design/dp/1118714709)
 
 - [Domain Modelling Made Functional - Scott Wlaschin](https://pragprog.com/book/swdddf/domain-modeling-made-functional) (if you're interested in functional programming)
-
 
 ### Online Courses
 

@@ -2,8 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-
 body {
-    min-height: 1vh;
-    min-width: 100%;
+  min-height: 1vh;
+  min-width: 100%;
 }

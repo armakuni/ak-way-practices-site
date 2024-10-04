@@ -1,10 +1,10 @@
-import react from '@vitejs/plugin-react';
+import react from "@vitejs/plugin-react";
 import { defineConfig } from "vitest/config";
 
 export default defineConfig({
   plugins: [react()],
   test: {
-    coverage: { reporter: [`text`, `json`, `html`], },
+    coverage: { reporter: [`text`, `json`, `html`] },
     setupFiles: ["src/setupTests.mts"],
     environment: "happy-dom",
     exclude: [
@@ -17,5 +17,4 @@ export default defineConfig({
     ],
     typecheck: { enabled: true },
   },
-})
-
+});

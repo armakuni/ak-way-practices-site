@@ -3,7 +3,7 @@ import type { GatsbyConfig } from "gatsby";
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `Armakuni Way`,
-    siteUrl: `https://practices.armauki.com`
+    siteUrl: `https://practices.armauki.com`,
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
@@ -12,28 +12,33 @@ const config: GatsbyConfig = {
   plugins: [
     "gatsby-plugin-image",
     "gatsby-plugin-sitemap",
-    'gatsby-plugin-postcss',
+    "gatsby-plugin-postcss",
     {
-      resolve: 'gatsby-plugin-manifest',
+      resolve: "gatsby-plugin-manifest",
       options: {
-        "icon": "src/images/logo.svg"
-      }
-    }, "gatsby-plugin-mdx", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        "name": "images",
-        "path": "./src/images/"
+        icon: "src/images/logo.svg",
       },
-      __key: "images"
-    }, {
-      resolve: 'gatsby-source-filesystem',
+    },
+    "gatsby-plugin-mdx",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    {
+      resolve: "gatsby-source-filesystem",
       options: {
-        "name": "pages",
-        "path": "./src/pages/"
+        name: "images",
+        path: "./src/images/",
       },
-      __key: "pages"
-    }
-  ]
+      __key: "images",
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "pages",
+        path: "./src/pages/",
+      },
+      __key: "pages",
+    },
+  ],
 };
 
 export default config;

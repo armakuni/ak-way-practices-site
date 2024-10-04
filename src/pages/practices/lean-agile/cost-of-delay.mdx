@@ -3,7 +3,7 @@ title: "Cost of Delay"
 tags: ["lean-agile"]
 ---
 
-export {default as default} from './../../../components/post-layout';
+export { default as default } from "./../../../components/post-layout";
 
 # Cost of Delay
 
@@ -32,33 +32,33 @@ Like with the previous table we need to know two things, value and priority.
 
 Calculating what the value of a feature is in monetary terms can be intimidating, but it can be simplified by thinking of all the things that fit into these 4 categories:
 
-* Increase Revenue
-* Protect Revenue
-* Reduce Costs
-* Avoid Costs
+- Increase Revenue
+- Protect Revenue
+- Reduce Costs
+- Avoid Costs
 
 Create a figure for each of these values. If your figure is only "probably" going to happen, multiply that figure by the probability. Put that all together, and your calculation looks a bit like this:
 
-> Total Value = (Increase Revenue * Increase Revenue Probability) + (Protect Revenue * Protect Revenue Probability) + (Reduce Revenue * Reduce Revenue Probability) + (Avoid Revenue * Avoid Revenue Probability)
+> Total Value = (Increase Revenue _ Increase Revenue Probability) + (Protect Revenue _ Protect Revenue Probability) + (Reduce Revenue _ Reduce Revenue Probability) + (Avoid Revenue _ Avoid Revenue Probability)
 
 ### Urgency
 
 In the most common urgency pattern, like the one we modelled in the simple activity above a delay doesn't affect the overall value.
 
 ![Peak unaffected by delay](../img/cost-of-delay/long-horizon-unaffected-peak-urgency-curve.png)
-*Credit: [Black Swan Farming: Urgency Profiles](http://blackswanfarming.com/urgency-profiles/)*
+_Credit: [Black Swan Farming: Urgency Profiles](http://blackswanfarming.com/urgency-profiles/)_
 
 In this scenario, the cost of delay is the benefits of delivering the feature.
 
 A less common urgency pattern is that the total value is affected by the delivery date.
 
 ![Peak affected by delay](../img/cost-of-delay/short-horizon-reduced-peak-urgency-curve.png)
-*Credit: [Black Swan Farming: Urgency Profiles](http://blackswanfarming.com/urgency-profiles/)*
+_Credit: [Black Swan Farming: Urgency Profiles](http://blackswanfarming.com/urgency-profiles/)_
 
 Alternatively, this can look like this for longer-lived features.
 
 ![Peak affected by delay](../img/cost-of-delay/long-horizon-reduced-peak-urgency-curve.png)
-*Credit: [Black Swan Farming: Urgency Profiles](http://blackswanfarming.com/urgency-profiles/)*
+_Credit: [Black Swan Farming: Urgency Profiles](http://blackswanfarming.com/urgency-profiles/)_
 
 For this, you need to record the Peak Reduction Cost too.
 
@@ -70,17 +70,16 @@ Fixed deadlines that are external, like regulation changes, meaning the cost of 
 
 First work out the total value
 
-> Total Value = Increased Revenue * Increased Revenue Probability
-> Total Value += Protected Revenue * Protected Revenue Probability
-> Total Value += Reduced Costs * Reduced Revenue Probability
-> Total Value += Avoided Costs * Avoided Revenue Probability
+> Total Value = Increased Revenue _ Increased Revenue Probability
+> Total Value += Protected Revenue _ Protected Revenue Probability
+> Total Value += Reduced Costs _ Reduced Revenue Probability
+> Total Value += Avoided Costs _ Avoided Revenue Probability
 
 Then use that to calculate the cost of delay.
 
 > Cost of Delay = (Total Value / Duration) + Peak Reduction Cost
 
 Next put that value next to every feature, and the higher the cost, the higher the priority.
-
 
 For example, we have a new feature we think are worth £100,000.00 and take 5 months to deliver, and if we don't deliver on time, it loses £10,000 over the overall benefit.
 
@@ -89,7 +88,6 @@ So to plug that into the calculation.
 > 30000 = (£100,000 / 5 months) + £10,000
 
 Complete this for all the things you want to prioritise, and you get a backlog that maximises business value.
-
 
 ## Comparing to other ordering methods
 
@@ -122,12 +120,11 @@ If we contrast this to other potential orderings of these stories, cost of delay
 
 ![Cost of delay burn down with alternatives](../img/cost-of-delay/graph-multi.png)
 
-
 ## Other resources
 
-* [Black Swan Farming: Cost of Delay](http://blackswanfarming.com/cost-of-delay/)
-* [Cost of Delay – a key economic metric](http://www.ontheagilepath.net/2017/03/cost-of-delay-a-key-metric.html)
-* [Determining value using Cost of Delay](https://medium.com/@MagnusDahlgren/determining-value-using-cost-of-delay-266cd94630c6)
-* [Calculating Cost of Delay](https://medium.com/@alexjp/calculating-cost-of-delay-3110c16827e9)
-* [Cost of Delay Presentation for RBS](https://docs.google.com/presentation/d/1O6N9SuSivhmtX4kKhdENG8ZQG0VdRAGc6LHmYtWze5o)
-* [ScrumAlliance Webinar on Cost of Delay](https://www.scrumalliance.org/learn-about-scrum/community-webinars/webinar-replays/collaboration-at-scale/cost-of-decision-delays)
+- [Black Swan Farming: Cost of Delay](http://blackswanfarming.com/cost-of-delay/)
+- [Cost of Delay – a key economic metric](http://www.ontheagilepath.net/2017/03/cost-of-delay-a-key-metric.html)
+- [Determining value using Cost of Delay](https://medium.com/@MagnusDahlgren/determining-value-using-cost-of-delay-266cd94630c6)
+- [Calculating Cost of Delay](https://medium.com/@alexjp/calculating-cost-of-delay-3110c16827e9)
+- [Cost of Delay Presentation for RBS](https://docs.google.com/presentation/d/1O6N9SuSivhmtX4kKhdENG8ZQG0VdRAGc6LHmYtWze5o)
+- [ScrumAlliance Webinar on Cost of Delay](https://www.scrumalliance.org/learn-about-scrum/community-webinars/webinar-replays/collaboration-at-scale/cost-of-decision-delays)
