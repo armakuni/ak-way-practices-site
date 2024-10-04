@@ -55,28 +55,28 @@ const IndexPage: React.FC<PageProps<DataProps>> = ({ data }) => {
             }
 
             return (
-              <div className="flex flex-col bg-base-100 m-0 w-full shadow-2xl rounded-3xl">
-                <a href={item?.fields?.slug ?? ""}>
+              <div className="flex flex-col bg-base-200 w-full shadow-2xl rounded-3xl">
+                <a href={item?.fields?.slug ?? ""} className={"flex flex-col"}>
                   <div
-                    className={`${bgColorClass} text-info-content px-3 pt-3 rounded-t-3xl relative overflow-hidden z-0`}
+                    className={`${bgColorClass} text-info-content px-3 pt-3 rounded-t-3xl relative overflow-hidden z-0 flex-grow flex justify-center h-[14em]`}
                   >
                     {item.frontmatter.icon === "user" ? (
                       <UserIcon
                         className={
-                          "absolute top-0 right-0 h-full stroke-white/10 -z-10"
+                          "absolute -top-5 -right-10 h-full stroke-white/10 -z-10"
                         }
                       />
                     ) : null}
                     {item.frontmatter.icon === "users" ? (
                       <UsersIcon
                         className={
-                          "absolute top-0 right-0 h-full stroke-white/10 -z-10"
+                          "absolute -top-5 -right-5 h-full stroke-white/10 -z-10"
                         }
                       />
                     ) : null}
                     <div
                       className={
-                        "border-neutral border-t border-x rounded-t-3xl px-5 pb-5 pb-2 pt-3 z-10"
+                        "border-neutral border-t border-x rounded-t-3xl px-5 pb-5 pb-2 pt-3 z-10 flex-grow flex-col flex"
                       }
                     >
                       {item.frontmatter.topline ? (
@@ -87,13 +87,13 @@ const IndexPage: React.FC<PageProps<DataProps>> = ({ data }) => {
                           {item.frontmatter.pill}
                         </div>
                       ) : null}
-                      {item.frontmatter.category ? (
-                        <div className={"text-4xl pt-8"}>
-                          {item.frontmatter.category}
+                      {item.frontmatter.title ? (
+                        <div className={"text-4xl flex-grow items-end flex"}>
+                          {item.frontmatter.title}
                         </div>
                       ) : null}
-                      {item.frontmatter.bottomline ? (
-                        <div>{item.frontmatter.bottomline}</div>
+                      {item.frontmatter.category ? (
+                        <div>{item.frontmatter.category}</div>
                       ) : null}
                     </div>
                   </div>
@@ -102,7 +102,7 @@ const IndexPage: React.FC<PageProps<DataProps>> = ({ data }) => {
                   >
                     <div>
                       <h1 className={"font-bold"}>
-                        {item.frontmatter?.title ?? "Untitled"}
+                        {item.frontmatter?.bottomline ?? "Untitled"}
                       </h1>
                       <p className={"text-sm"}>
                         {item.frontmatter.description ? (
