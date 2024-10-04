@@ -14,11 +14,8 @@ jobs:
       url: ${{ steps.deploy.outputs.details_url }}
     steps:
       - uses: actions/checkout@v4
-      - uses: taiki-e/install-action@cargo-binstall
-        name: Install cargo binstall
-      - run: cargo binstall --no-confirm mdbook
-      - run: mdbook build
-      - run: openssl rand -hex 12 > book/aa-releaseid
+      - run: npm ci --force && npm run build
+      - run: openssl rand -hex 12 > public/aa-releaseid
       - uses: FirebaseExtended/action-hosting-deploy@v0
         id: deploy
         with:
