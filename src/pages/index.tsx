@@ -5,6 +5,7 @@ import "@fontsource/maven-pro";
 import Layout from "../components/layout";
 import { UserIcon } from "@heroicons/react/24/outline";
 import { UsersIcon } from "@heroicons/react/24/outline";
+import { CloudIcon } from "@heroicons/react/24/outline";
 
 type DataProps = {
   allMdx: {
@@ -55,6 +56,11 @@ const IndexPage: React.FC<PageProps<DataProps>> = ({ data }) => {
               bgColorClass = "bg-success";
             }
 
+            if (item.frontmatter.color === "orange") {
+              textColorClass = "text-base-content";
+              bgColorClass = "bg-warning";
+            }
+
             return (
               <div
                 key={item.id}
@@ -75,6 +81,13 @@ const IndexPage: React.FC<PageProps<DataProps>> = ({ data }) => {
                       <UsersIcon
                         className={
                           "absolute -right-7 -top-7 h-full stroke-white/10 -z-10"
+                        }
+                      />
+                    ) : null}
+                    {item.frontmatter.icon === "cloud" ? (
+                      <CloudIcon
+                        className={
+                          "absolute -right-7 -top-10 h-full stroke-white/10 -z-10"
                         }
                       />
                     ) : null}

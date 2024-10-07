@@ -1,0 +1,32 @@
+---
+title: "Chaos Engineering"
+description: "A practice to build in resilience into the system via deliberately injecting failures into a system in a controlled way"
+category: "Cloud Native"
+subcategory: "We do day 2 operations on day 1"
+topline: "We can recover from disasters"
+color: "orange"
+icon: "cloud"
+---
+
+export { default as default } from "../../../../components/post-layout";
+
+# Chaos Engineering
+
+How to get started with Chaos Engineering!
+
+1. **Understand Your System**
+   Map out your system's architecture and dependencies. Identify potential failure points where things could go wrong.
+
+2. **Form a Hypothesis**
+   Predict how your system will respond to specific failures (e.g. a database outage, resource exhaustion, etc).
+
+3. **Start Small**
+   Choose a safe, non-production environment for your first experiments. Inject a controlled failure based on your hypothesis.
+
+4. **Monitor and Analyze**
+   Track how the system reacts to the simulated failure. Did it behave as expected? Did it recover gracefully?
+
+5. **Learn and Adapt**
+   Based on your findings, refine your system or create new experiments to test different failure scenarios.
+
+Remember, chaos engineering is an ongoing process. The more you experiment, the better you'll understand and improve your system's resilience.
