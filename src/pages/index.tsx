@@ -3,10 +3,14 @@ import type { HeadFC, PageProps } from "gatsby";
 import { graphql } from "gatsby";
 import "@fontsource/maven-pro";
 import Layout from "../components/layout";
-import { ArrowPathIcon, UserIcon } from "@heroicons/react/24/outline";
-import { UsersIcon } from "@heroicons/react/24/outline";
-import { CloudIcon } from "@heroicons/react/24/outline";
-import { CodeBracketIcon } from "@heroicons/react/24/outline";
+import {
+  ArchiveBoxIcon,
+  ArrowPathIcon,
+  CloudIcon,
+  CodeBracketIcon,
+  UserIcon,
+  UsersIcon,
+} from "@heroicons/react/24/outline";
 
 type DataProps = {
   allMdx: {
@@ -72,6 +76,11 @@ const IndexPage: React.FC<PageProps<DataProps>> = ({ data }) => {
                   bgColorClass = "bg-accent";
                 }
 
+                if (item.frontmatter.color === "red") {
+                  textColorClass = "text-error-content";
+                  bgColorClass = "bg-error";
+                }
+
                 return (
                   <div
                     key={item.id}
@@ -114,6 +123,13 @@ const IndexPage: React.FC<PageProps<DataProps>> = ({ data }) => {
                         ) : null}
                         {item.frontmatter.icon === "arrow-path" ? (
                           <ArrowPathIcon
+                            className={
+                              "absolute -right-7 -top-10 h-full stroke-white/10 -z-10"
+                            }
+                          />
+                        ) : null}
+                        {item.frontmatter.icon === "archive-box" ? (
+                          <ArchiveBoxIcon
                             className={
                               "absolute -right-7 -top-10 h-full stroke-white/10 -z-10"
                             }

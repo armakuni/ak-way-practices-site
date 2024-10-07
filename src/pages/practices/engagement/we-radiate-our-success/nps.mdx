@@ -1,0 +1,33 @@
+---
+title: "NPS"
+description: "A metric used to measure customer loyalty and satisfaction."
+category: "Engagement"
+subcategory: "We radiate our success"
+topline: "Display product metrics"
+color: "red"
+icon: "archive-box"
+---
+
+export { default as default } from "../../../../components/post-layout";
+
+# NPS
+
+How to Calculate NPS:
+
+1. **Survey Customers:** Ask them to rate their likelihood of recommending your product/service on a scale from 0 to 10.
+2. **Categorize Responses:**
+   - **Promoters (9-10)**:
+     Loyal customers.
+   - **Passives (7-8):**
+     Satisfied but not enthusiastic.
+   - **Detractors (0-6):**
+     Unhappy customers.
+3. **Calculate Percentages:**
+   - **% Promoters:**
+     (Promoters / Total Responses) x 100
+   - **% Detractors:**
+     (Detractors / Total Responses) x 100
+4. **Calculate NPS:**
+   Subtract % Detractors from % Promoters:
+   NPS = % Promoters - % Detractors
+5. **Interpret:** Positive NPS indicates more promoters than detractors; above 50 is excellent.
