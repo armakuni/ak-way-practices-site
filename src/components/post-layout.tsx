@@ -1,10 +1,34 @@
 import React, { PropsWithChildren } from "react";
 import { NavBar } from "./bar/NavBar";
 import Footer from "./foot/Footer";
+import Helmet from "react-helmet";
+import { graphql, useStaticQuery } from "gatsby";
 
-export default function PostLayout({ children }: PropsWithChildren) {
+export type PostLayoutProps = PropsWithChildren;
+
+export default function PostLayout({ children }: PostLayoutProps) {
+  const data = useStaticQuery(graphql`
+    query data {
+      mdx {
+        id
+        frontmatter {
+          title
+        }
+      }
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `);
   return (
     <>
+      <Helmet>
+        <title>
+          {data.mdx.frontmatter.title} - {data.site.siteMetadata.title}
+        </title>
+      </Helmet>
       <NavBar />
       <main
         className={

@@ -9,6 +9,7 @@ import { UsersIcon } from "@heroicons/react/24/outline";
 type DataProps = {
   allMdx: {
     nodes: {
+      id?: string;
       excerpt?: string;
       fields: {
         slug?: string;
@@ -55,7 +56,10 @@ const IndexPage: React.FC<PageProps<DataProps>> = ({ data }) => {
             }
 
             return (
-              <div className="flex flex-col bg-base-200 w-full shadow-2xl rounded-3xl">
+              <div
+                key={item.id}
+                className="flex flex-col bg-base-200 w-full shadow-2xl rounded-3xl"
+              >
                 <a href={item?.fields?.slug ?? ""} className={"flex flex-col"}>
                   <div
                     className={`${bgColorClass} text-info-content px-3 pt-3 rounded-t-3xl relative overflow-hidden z-0 flex-grow flex justify-center h-[14em]`}
@@ -139,6 +143,7 @@ export const query = graphql`
   query {
     allMdx {
       nodes {
+        id
         excerpt
         fields {
           slug

@@ -1,4 +1,4 @@
-import type { GatsbyConfig } from "gatsby";
+import { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -19,7 +19,19 @@ const config: GatsbyConfig = {
         icon: "src/images/logo.svg",
       },
     },
-    "gatsby-plugin-mdx",
+    {
+      resolve: "gatsby-plugin-mdx",
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1200,
+            },
+          },
+        ],
+      },
+    },
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
@@ -40,5 +52,4 @@ const config: GatsbyConfig = {
     },
   ],
 };
-
 export default config;
