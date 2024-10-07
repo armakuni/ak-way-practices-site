@@ -22,7 +22,7 @@ type DataProps = {
         color?: string;
         icon?: string;
         topline?: string;
-        bottomline?: string;
+        subcategory?: string;
       };
     }[];
   };
@@ -83,8 +83,8 @@ const IndexPage: React.FC<PageProps<DataProps>> = ({ data }) => {
                         "border-neutral border-t border-x rounded-t-3xl px-5 pb-5 pb-2 pt-3 z-10 flex-grow flex-col flex"
                       }
                     >
-                      {item.frontmatter.topline ? (
-                        <div>{item.frontmatter.topline}</div>
+                      {item.frontmatter.subcategory ? (
+                        <div>{item.frontmatter.subcategory}</div>
                       ) : null}
                       {item.frontmatter.pill ? (
                         <div className={"badge text-sm"}>
@@ -106,7 +106,7 @@ const IndexPage: React.FC<PageProps<DataProps>> = ({ data }) => {
                   >
                     <div>
                       <h1 className={"font-bold"}>
-                        {item.frontmatter?.bottomline ?? "Untitled"}
+                        {item.frontmatter?.topline ?? "Untitled"}
                       </h1>
                       <p className={"text-sm"}>
                         {item.frontmatter.description ? (
@@ -134,7 +134,7 @@ export const Head: HeadFC = () => {
   return (
     <>
       <title>Armakuni Way</title>
-      <body className="subpixel-antialiased bg-base-100 text-base-content min-h-screen" />
+      <body className="subpixel-antialiased bg-base-100 text-base-content min-h-screen overflow-x-hidden" />
     </>
   );
 };
@@ -156,7 +156,7 @@ export const query = graphql`
           icon
           color
           topline
-          bottomline
+          subcategory
         }
       }
     }
