@@ -1,0 +1,26 @@
+---
+title: "Trunk Based Development Practice"
+description: 'Merging small, frequent code updates directly into the main codebase (often called "trunk" or "main") instead of long-lived feature branches'
+category: "Code as Craft"
+subcategory: "Coding practice"
+topline: "Commit to main / trunk and run integration at least once a day"
+color: "pink"
+icon: "code-bracket"
+---
+
+export { default as default } from "../../../../components/post-layout";
+
+# Trunk Based Development Practice
+
+1. **Main Branch Focus:** Development happens on the main branch, not long-lived feature branches.
+1. **Frequent & Small Commits:** Push small, incremental changes regularly to the main branch.
+1. **Automation is Key:** Automated tests run on every commit (CI) to ensure quality.
+1. **Pull Requests (Optional):** Can be used for code review before merging to the main branch.
+1. **Always Deployable:** The main branch should always be ready for deployment.
+
+**Benefits:**
+
+- Faster integration and deployments.
+- Less merge conflicts.
+- Improved code stability.
+- Better team visibility into the codebase.

@@ -6,6 +6,7 @@ import Layout from "../components/layout";
 import { UserIcon } from "@heroicons/react/24/outline";
 import { UsersIcon } from "@heroicons/react/24/outline";
 import { CloudIcon } from "@heroicons/react/24/outline";
+import { CodeBracketIcon } from "@heroicons/react/24/outline";
 
 type DataProps = {
   allMdx: {
@@ -61,6 +62,11 @@ const IndexPage: React.FC<PageProps<DataProps>> = ({ data }) => {
               bgColorClass = "bg-warning";
             }
 
+            if (item.frontmatter.color === "pink") {
+              textColorClass = "text-base-content";
+              bgColorClass = "bg-accent";
+            }
+
             return (
               <div
                 key={item.id}
@@ -86,6 +92,13 @@ const IndexPage: React.FC<PageProps<DataProps>> = ({ data }) => {
                     ) : null}
                     {item.frontmatter.icon === "cloud" ? (
                       <CloudIcon
+                        className={
+                          "absolute -right-7 -top-10 h-full stroke-white/10 -z-10"
+                        }
+                      />
+                    ) : null}
+                    {item.frontmatter.icon === "code-bracket" ? (
+                      <CodeBracketIcon
                         className={
                           "absolute -right-7 -top-10 h-full stroke-white/10 -z-10"
                         }
@@ -154,7 +167,13 @@ export const Head: HeadFC = () => {
 
 export const query = graphql`
   query {
-    allMdx {
+    allMdx(
+      sort: [
+        { frontmatter: { category: ASC } }
+        { frontmatter: { subcategory: ASC } }
+        { frontmatter: { title: ASC } }
+      ]
+    ) {
       nodes {
         id
         excerpt
