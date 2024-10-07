@@ -19,6 +19,10 @@ module.exports = {
       fontFamily: {
         sans: ['"Maven Pro"', ...defaultTheme.fontFamily.sans],
       },
+      colors: {
+        "info-light": "oklch(var(--info-light) / 1)",
+        "info-light-content": "oklch(var(--info-light-content) / 1)",
+      },
     },
   },
   plugins: [daisyui, tailwindTypography],
@@ -46,6 +50,8 @@ module.exports = {
           "warning-content": "#000",
           error: "#db180f",
           "error-content": "#000",
+          "--info-light": "72.59% 0.1236 230.28",
+          "--info-light-content": "0% 0 0",
         },
       },
       {
@@ -70,6 +76,8 @@ module.exports = {
           "warning-content": "#000",
           error: "#db180f",
           "error-content": "#000",
+          "--info-light": "72.59% 0.1236 230.28",
+          "--info-light-content": "0% 0 0",
         },
       },
     ],
