@@ -55,3 +55,47 @@ Welcome to The AK Way Play Book! This project is built using Gatsby and contains
 ## 🤝 Contributing
 
 You can open a PR. If you are a member of AK it'll do a preview deploy.
+
+Just copy one of the MDX files, fill in the bits and it'll appear. Here's a little guide to the mdx files. 
+
+Here's a little breakdown of the `frontmatter` (the bit between the `---` bits.
+
+![image](https://github.com/user-attachments/assets/79316c76-691a-4a0c-8a38-55dd80b2f6c5)
+
+* Title - Tertiary ordering -  This is the title as it appears on the index page
+* category - Primary ordering - Appears under the title
+* Subcategory - Secondary ordering - The small text above the title
+* Topline - The bold line above the description
+* Description - Description that appears under the
+* Color - The color
+* Icon - The faded icon in the background
+
+The theme for the page is set by `export { default as default } from "../../../../components/post-layout"`
+
+The rest is standard markdown.
+
+```mdx
+---
+title: "WIP Limit"
+description: "WIP limit of one means that only one item can be in progress at a given stage and would be ideally pair programmed/mobbed to be effective"
+category: "XP & Agility"
+subcategory: "We work in weekly iterations"
+topline: "Work in progress has limit of 1"
+color: "light-blue"
+icon: "arrow-path"
+---
+
+export { default as default } from "../../../../components/post-layout";
+
+# WIP Limit
+
+The benefits of working on 1 thing at a time:
+
+**Maximise focus:** By limiting the number of tasks, team members can concentrate fully on one item at a time, reducing context switching and improving efficiency.
+
+**Identify bottlenecks:** If a single item is stuck, it becomes immediately apparent, allowing for quicker resolution.
+
+**Reduce multitasking:** Encourages a single-tasking approach, often leading to better quality and faster delivery.
+
+**Visualize workflow:** Makes it easier to see where work is piling up and where improvements can be made.
+```
