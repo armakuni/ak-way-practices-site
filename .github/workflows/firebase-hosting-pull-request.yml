@@ -36,7 +36,7 @@ jobs:
         run: npx playwright install --with-deps
       - name: Run integration tests
         run: |
-          npx run test:e2e
+          npm run test:e2e
       - uses: actions/upload-artifact@604373da6381bf24206979c74d06a550515601b9 # v4
         if: always()
         with:
