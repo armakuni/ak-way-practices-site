@@ -32,7 +32,7 @@ export default function PostLayout({ children }: PostLayoutProps) {
       <NavBar />
       <main
         className={
-          "w-full flex-grow flex min-h-[70vh] w-full flex-grow flex w-full justify-center gap-4 py-4"
+          "w-full flex-grow flex w-full flex-grow flex w-full justify-center gap-4 py-4"
         }
       >
         <article className={"prose"}>{children}</article>

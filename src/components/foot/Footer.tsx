@@ -4,14 +4,8 @@ const Footer: FC = () => (
   <>
     <footer className="text-base-200-content footer footer-center rounded bg-base-200 p-10 mt-auto">
       <div className="grid grid-flow-col gap-4">
-        <a className="link-hover link" href="/about">
-          About Insights
-        </a>
         <a className="link-hover link" href="https://www.armakuni.com/">
           About Armakuni
-        </a>
-        <a className="link-hover link" href="/faq">
-          Frequently Asked Questions
         </a>
         <a
           className="link-hover link"
