@@ -1,7 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
 
 const baseUrl =  process.env.PW_BASE_URL ? process.env.PW_BASE_URL : 'http://localhost:8000';
-const startWebserver = !!process.env.PW_BASE_URL;
+const startWebserver = !process.env.PW_BASE_URL;
 
 export default defineConfig({
   // Look for test files in the "tests" directory, relative to this configuration file.
