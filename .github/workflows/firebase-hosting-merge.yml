@@ -39,7 +39,7 @@ jobs:
       - beta-deploy
     environment:
       name: production
-      url: ${{ steps.deploy.outputs.details_url }}
+      url: ${{ env.PROD_URL }}
     steps:
       - uses: actions/checkout@v4
       - run: npm ci --force && npm run build
