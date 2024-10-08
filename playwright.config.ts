@@ -1,5 +1,8 @@
 import { defineConfig, devices } from '@playwright/test';
 
+const baseUrl =  process.env.PW_BASE_URL ? process.env.PW_BASE_URL : 'http://localhost:8000';
+const startWebserver = !!process.env.PW_BASE_URL;
+
 export default defineConfig({
   // Look for test files in the "tests" directory, relative to this configuration file.
   testDir: 'tests',
@@ -25,7 +28,7 @@ export default defineConfig({
 
   use: {
     // Base URL to use in actions like `await page.goto('/')`.
-    baseURL: 'http://localhost:8000',
+    baseURL: baseUrl,
 
     // Collect trace when retrying the failed test.
     trace: 'on-first-retry',
@@ -43,10 +46,10 @@ export default defineConfig({
     },
   ],
   // Run your local dev server before starting the tests.
-  webServer: {
+  webServer: startWebserver ? {
     command: 'npm run start',
-    url: 'http://localhost:8000',
+    url: baseUrl,
     reuseExistingServer: !process.env.CI,
     timeout: 5 * 60 * 1000,
-  },
+  } : undefined,
 });
