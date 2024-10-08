@@ -19,6 +19,9 @@
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit"
   },
+  "engines": {
+    "node": ">=v22.2.0"
+  },
   "dependencies": {
     "@fontsource/maven-pro": "^5.0.16",
     "@heroicons/react": "^2.1.5",
