@@ -149,11 +149,11 @@ const IndexPage: React.FC<PageProps<DataProps>> = ({ data }) => {
                             </div>
                           ) : null}
                           {item.frontmatter.title ? (
-                            <div
+                            <h3
                               className={"text-4xl flex-grow items-end flex"}
                             >
                               {item.frontmatter.title}
-                            </div>
+                            </h3>
                           ) : null}
                           {item.frontmatter.category ? (
                             <div>{item.frontmatter.category}</div>
@@ -164,9 +164,9 @@ const IndexPage: React.FC<PageProps<DataProps>> = ({ data }) => {
                         className={`text-base-content px-8 pt-2 pb-8 rounded-b-3xl`}
                       >
                         <div>
-                          <h3 className={"font-bold"}>
+                          <h4 className={"font-bold"}>
                             {item.frontmatter?.topline ?? "Untitled"}
-                          </h3>
+                          </h4>
                           <div className={"text-sm"}>
                             {item.frontmatter.description ? (
                               <p>{item.frontmatter.description}</p>
