@@ -7,7 +7,7 @@ on:
     branches:
       - main
 jobs:
-  build_and_deploy:
+  beta-deploy:
     runs-on: ubuntu-latest
     environment:
       name: production
@@ -23,6 +23,31 @@ jobs:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_THEWAY_V3 }}
           projectId: theway-v3
           channelId: beta
+      - shell: bash
+        run: set -euo pipefail
+          curl -v --location "$URL/aa-releaseid" -o actual
+          grep -qF "$(cat book/aa-releaseid)" actual
+        env:
+          URL: ${{steps.deploy.outputs.details_url}}
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs:
+      - beta-deploy
+    environment:
+      name: production
+      url: ${{ steps.deploy.outputs.details_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm ci --force && npm run build
+      - run: openssl rand -hex 12 > public/aa-releaseid
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        id: deploy
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_THEWAY_V3 }}
+          projectId: theway-v3
+          channelId: live
       - shell: bash
         run: set -euo pipefail
           curl -v --location "$URL/aa-releaseid" -o actual
