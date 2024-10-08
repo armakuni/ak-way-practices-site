@@ -4,6 +4,7 @@ import { test } from "@playwright/test";
 test.describe("post page", () => {
   test.beforeEach(async ({ page }) => {
     await page.goto("/");
+    await page.getByRole("navigation").waitFor();
     const locator = page.getByRole("main").getByRole("link").first();
     const headingText = await locator
       .getByRole("heading", { level: 3 })

@@ -4,6 +4,7 @@ import { test } from "@playwright/test";
 test.describe("index page", () => {
   test.beforeEach(async ({ page }) => {
     await page.goto("/");
+    await page.getByRole("navigation").waitFor();
   });
 
   test("it should have at least one page", async ({ page }) => {
