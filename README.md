@@ -14,17 +14,9 @@ Welcome to The AK Way Play Book! This project is built using Gatsby and contains
    ```
    npm install
    ```
-   or
-   ```
-   yarn
-   ```
 3. Start the development server:
    ```
    npm run develop
-   ```
-   or
-   ```
-   yarn develop
    ```
 
 ## 📜 Available Scripts
