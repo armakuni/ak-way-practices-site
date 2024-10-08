@@ -15,7 +15,7 @@ export const ArmakuniLogomark: FC<ArmakuniLogomarkProps> = ({
       xmlSpace="preserve"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <title>'Armakuni'</title>
+      <title>Armakuni</title>
       <g transform="matrix(1.3333333,0,0,-1.3333333,0,79.08)">
         <g transform="scale(0.1)">
           <path
