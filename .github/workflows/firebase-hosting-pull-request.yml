@@ -18,7 +18,7 @@ jobs:
         with:
           cache: npm
           node-version-file: package.json
-      - run: npm install --force
+      - run: npm install
       - run: npm run lint
       - run: npm run test:unit
 
@@ -32,7 +32,7 @@ jobs:
           cache: npm
           node-version-file: package.json
       - name: Install Dependencies
-        run: npm install --force
+        run: npm install
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       - name: Run integration tests
@@ -60,7 +60,7 @@ jobs:
         with:
           cache: npm
           node-version-file: package.json
-      - run: npm install --force && npm run build
+      - run: npm install && npm run build
       - run: openssl rand -hex 12 > public/aa-releaseid
       - uses: FirebaseExtended/action-hosting-deploy@d482eb942f549f059116ec36b191860128553142 # v0
         id: deploy
