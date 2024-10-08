@@ -8,8 +8,8 @@
     "gatsby"
   ],
   "scripts": {
-    "lint": "eslint --cache --cache-location=./node_modules/.eslintcache src",
-    "lint:fix": "eslint --cache --cache-location=./node_modules/.eslintcache --fix src",
+    "lint": "eslint --cache --cache-location=./node_modules/.eslintcache src tests",
+    "lint:fix": "eslint --cache --cache-location=./node_modules/.eslintcache --fix src tests",
     "test:unit": "vitest",
     "test:e2e": "playwright test",
     "develop": "gatsby develop",
@@ -23,6 +23,7 @@
     "node": ">=v22.2.0"
   },
   "dependencies": {
+    "@axe-core/playwright": "^4.10.0",
     "@fontsource/maven-pro": "^5.0.16",
     "@heroicons/react": "^2.1.5",
     "@mdx-js/react": "^3.0.1",

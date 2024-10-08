@@ -25,6 +25,7 @@ export default function PostLayout({ children }: PostLayoutProps) {
   return (
     <>
       <Helmet>
+        <html lang="en" />
         <title>
           {data.mdx.frontmatter.title} - {data.site.siteMetadata.title}
         </title>

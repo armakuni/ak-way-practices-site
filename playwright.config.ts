@@ -1,6 +1,6 @@
 import { defineConfig, devices } from '@playwright/test';
 
-const baseUrl =  process.env.PW_BASE_URL ? process.env.PW_BASE_URL : 'http://localhost:8000';
+const baseUrl =  process.env.PW_BASE_URL ? process.env.PW_BASE_URL : 'http://localhost:8002';
 const startWebserver = !process.env.PW_BASE_URL;
 
 export default defineConfig({
@@ -47,7 +47,7 @@ export default defineConfig({
   ],
   // Run your local dev server before starting the tests.
   webServer: startWebserver ? {
-    command: 'npm run start',
+    command: 'npm run start -- --port 8002',
     url: baseUrl,
     reuseExistingServer: !process.env.CI,
     timeout: 5 * 60 * 1000,

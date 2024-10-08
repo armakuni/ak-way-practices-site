@@ -191,6 +191,7 @@ export default IndexPage;
 export const Head: HeadFC = () => {
   return (
     <>
+      <html lang="en" />
       <title>Armakuni Way</title>
       <body className="subpixel-antialiased bg-base-100 text-base-content min-h-screen overflow-x-hidden" />
     </>
