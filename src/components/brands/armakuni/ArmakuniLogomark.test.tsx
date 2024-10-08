@@ -1,7 +1,7 @@
+import { render, screen } from "@testing-library/react";
+import React from "react";
 import { describe, expect, it } from "vitest";
 import { ArmakuniLogomark } from "./ArmakuniLogomark";
-import React from "react";
-import { render, screen } from "@testing-library/react";
 
 describe("ArmakuniLogomark", () => {
   it("should render the Armakuni logo", async () => {

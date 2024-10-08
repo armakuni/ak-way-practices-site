@@ -1,5 +1,5 @@
-import { ArmakuniLogomark } from "../brands/armakuni/ArmakuniLogomark";
 import React from "react";
+import { ArmakuniLogomark } from "../brands/armakuni/ArmakuniLogomark";
 
 export const NavBar = () => {
   return (

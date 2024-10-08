@@ -1,8 +1,8 @@
+import { graphql, useStaticQuery } from "gatsby";
 import React, { PropsWithChildren } from "react";
+import Helmet from "react-helmet";
 import { NavBar } from "./bar/NavBar";
 import Footer from "./foot/Footer";
-import Helmet from "react-helmet";
-import { graphql, useStaticQuery } from "gatsby";
 
 export type PostLayoutProps = PropsWithChildren;
 

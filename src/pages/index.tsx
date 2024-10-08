@@ -1,8 +1,7 @@
-import * as React from "react";
 import type { HeadFC, PageProps } from "gatsby";
 import { graphql } from "gatsby";
+import * as React from "react";
 import "@fontsource/maven-pro";
-import Layout from "../components/layout";
 import {
   ArchiveBoxIcon,
   ArrowPathIcon,
@@ -11,6 +10,7 @@ import {
   UserIcon,
   UsersIcon,
 } from "@heroicons/react/24/outline";
+import Layout from "../components/layout";
 
 type DataProps = {
   allMdx: {
