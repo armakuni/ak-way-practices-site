@@ -8,7 +8,7 @@ export default defineConfig({
     setupFiles: ["src/setupTests.mts"],
     environment: "happy-dom",
     exclude: [
-      "./e2e/**",
+      "./tests/**",
       "**/node_modules/**",
       "**/dist/**",
       "**/cypress/**",
