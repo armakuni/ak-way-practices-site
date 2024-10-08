@@ -1,0 +1,12 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "timezone": "Europe/London",
+  "automergeType": "branch",
+  "extends": [
+    "config:best-practices",
+    "schedule:automergeWeekdays",
+    ":automergeAll",
+    ":combinePatchMinorReleases",
+    "group:allNonMajor"
+  ]
+}
