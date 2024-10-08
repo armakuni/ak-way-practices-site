@@ -149,9 +149,7 @@ const IndexPage: React.FC<PageProps<DataProps>> = ({ data }) => {
                             </div>
                           ) : null}
                           {item.frontmatter.title ? (
-                            <h3
-                              className={"text-4xl flex-grow items-end flex"}
-                            >
+                            <h3 className={"text-4xl flex-grow items-end flex"}>
                               {item.frontmatter.title}
                             </h3>
                           ) : null}
