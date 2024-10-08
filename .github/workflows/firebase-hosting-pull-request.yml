@@ -34,8 +34,6 @@ jobs:
           node-version-file: package.json
       - name: Install Dependencies
         run: npm install
-      - name: Build
-        run: npm run build
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       - name: Run integration tests
