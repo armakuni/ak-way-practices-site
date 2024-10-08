@@ -66,5 +66,10 @@
     "tailwindcss": "3.4.13",
     "typescript": "5.6.2",
     "vitest": "2.1.2"
+  },
+  "overrides": {
+    "gatsby-plugin-mdx": {
+      "@mdx-js/react": "$@mdx-js/react"
+    }
   }
 }
