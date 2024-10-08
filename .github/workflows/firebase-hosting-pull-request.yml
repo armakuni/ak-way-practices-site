@@ -84,5 +84,5 @@ jobs:
       - uses: actions/upload-artifact@604373da6381bf24206979c74d06a550515601b9 # v4
         if: always()
         with:
-          name: playwright-report
+          name: playwright-report-pr-deploy
           path: playwright-report/
