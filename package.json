@@ -60,13 +60,13 @@
     "eslint-config-react-app": "7.0.1",
     "eslint-plugin-prettier": "5.2.1",
     "gatsby-plugin-postcss": "6.14.0",
-    "happy-dom": "15.11.0",
-    "postcss": "8.4.47",
+    "happy-dom": "15.11.6",
+    "postcss": "8.4.49",
     "prettier": "3.3.3",
     "prettier-plugin-tailwindcss": "0.6.8",
-    "tailwindcss": "3.4.14",
+    "tailwindcss": "3.4.15",
     "typescript": "5.6.3",
-    "vitest": "2.1.4"
+    "vitest": "2.1.5"
   },
   "overrides": {
     "gatsby-plugin-mdx": {
