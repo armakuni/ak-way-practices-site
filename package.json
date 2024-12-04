@@ -48,11 +48,11 @@
     "@tailwindcss/typography": "0.5.15",
     "@testing-library/jest-dom": "6.6.3",
     "@testing-library/react": "16.0.1",
-    "@types/node": "22.9.3",
+    "@types/node": "22.10.1",
     "@types/react": "18.3.12",
     "@types/react-dom": "18.3.1",
     "@types/react-helmet": "6.1.11",
-    "@vitejs/plugin-react": "4.3.3",
+    "@vitejs/plugin-react": "4.3.4",
     "autoprefixer": "10.4.20",
     "c8": "10.1.2",
     "daisyui": "4.12.14",
@@ -60,13 +60,13 @@
     "eslint-config-react-app": "7.0.1",
     "eslint-plugin-prettier": "5.2.1",
     "gatsby-plugin-postcss": "6.14.0",
-    "happy-dom": "15.11.6",
+    "happy-dom": "15.11.7",
     "postcss": "8.4.49",
-    "prettier": "3.3.3",
+    "prettier": "3.4.2",
     "prettier-plugin-tailwindcss": "0.6.9",
-    "tailwindcss": "3.4.15",
+    "tailwindcss": "3.4.16",
     "typescript": "5.7.2",
-    "vitest": "2.1.5"
+    "vitest": "2.1.8"
   },
   "overrides": {
     "gatsby-plugin-mdx": {
