@@ -60,7 +60,7 @@
     "eslint-config-react-app": "7.0.1",
     "eslint-plugin-prettier": "5.4.1",
     "gatsby-plugin-postcss": "6.14.0",
-    "happy-dom": "17.6.3",
+    "happy-dom": "18.0.1",
     "postcss": "8.5.4",
     "prettier": "3.5.3",
     "prettier-plugin-tailwindcss": "0.6.12",
