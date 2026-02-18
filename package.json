@@ -38,8 +38,8 @@
     "gatsby-remark-images": "^7.13.2",
     "gatsby-source-filesystem": "^5.13.1",
     "gatsby-transformer-sharp": "^5.13.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
@@ -49,8 +49,8 @@
     "@testing-library/jest-dom": "6.9.1",
     "@testing-library/react": "16.3.2",
     "@types/node": "24.10.13",
-    "@types/react": "18.3.28",
-    "@types/react-dom": "18.3.7",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
     "@types/react-helmet": "6.1.11",
     "@vitejs/plugin-react": "5.1.4",
     "autoprefixer": "10.4.24",
