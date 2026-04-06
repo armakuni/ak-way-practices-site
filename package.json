@@ -44,7 +44,7 @@
   },
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "4.7.1",
-    "@playwright/test": "1.58.2",
+    "@playwright/test": "1.59.1",
     "@tailwindcss/typography": "0.5.19",
     "@testing-library/jest-dom": "6.9.1",
     "@testing-library/react": "16.3.2",
