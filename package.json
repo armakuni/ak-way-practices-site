@@ -63,10 +63,10 @@
     "happy-dom": "20.9.0",
     "postcss": "8.5.10",
     "prettier": "3.8.3",
-    "prettier-plugin-tailwindcss": "0.7.2",
+    "prettier-plugin-tailwindcss": "0.7.3",
     "tailwindcss": "3.4.19",
     "typescript": "5.9.3",
-    "vitest": "4.1.4"
+    "vitest": "4.1.5"
   },
   "overrides": {
     "gatsby-plugin-mdx": {
