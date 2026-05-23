@@ -49,24 +49,24 @@
     "@testing-library/jest-dom": "6.9.1",
     "@testing-library/react": "16.3.2",
     "@types/node": "24.12.4",
-    "@types/react": "18.3.28",
+    "@types/react": "18.3.29",
     "@types/react-dom": "18.3.7",
     "@types/react-helmet": "6.1.11",
     "@vitejs/plugin-react": "6.0.2",
     "autoprefixer": "10.5.0",
     "c8": "11.0.0",
-    "daisyui": "5.5.19",
+    "daisyui": "5.5.20",
     "eslint-config-prettier": "10.1.8",
     "eslint-config-react-app": "7.0.1",
     "eslint-plugin-prettier": "5.5.5",
     "gatsby-plugin-postcss": "6.16.0",
     "happy-dom": "20.9.0",
-    "postcss": "8.5.14",
+    "postcss": "8.5.15",
     "prettier": "3.8.3",
     "prettier-plugin-tailwindcss": "0.8.0",
     "tailwindcss": "3.4.19",
     "typescript": "5.9.3",
-    "vitest": "4.1.6"
+    "vitest": "4.1.7"
   },
   "overrides": {
     "gatsby-plugin-mdx": {
