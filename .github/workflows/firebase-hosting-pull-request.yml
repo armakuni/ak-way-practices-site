@@ -63,7 +63,7 @@ jobs:
           node-version-file: package.json
       - run: npm install && npm run build
       - run: openssl rand -hex 12 > public/aa-releaseid
-      - uses: FirebaseExtended/action-hosting-deploy@e2eda2e106cfa35cdbcf4ac9ddaf6c4756df2c8c # v0
+      - uses: FirebaseExtended/action-hosting-deploy@500ac625ca2dd40cbd15f7659af953801858032a # v0
         id: deploy
         with:
           expires: 2d
